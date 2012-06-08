@@ -5,7 +5,6 @@
   box-sizing:border-box;
 }
 
-img { min-width:100%; }
 .view-display-id-panel_pane_people_grid .views-row {
   width:25%;
   float:left;
