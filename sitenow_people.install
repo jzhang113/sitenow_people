@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * Call hook_enable
+ * Create menu item
+ *
+ */
+ 
+function sitenow_people_enable() {
+  $menu_links = array(
+	  'link_path' => drupal_get_normal_path('people'),
+	  'link_title' =>  t('People'),
+	  'menu_name' => 'main-menu',
+	  'weight' => 2,
+	);
+	
+  menu_link_save($menu_links);
+  menu_cache_clear_all();
+}
