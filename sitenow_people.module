@@ -8,21 +8,6 @@ include_once 'sitenow_people.features.inc';
 
 drupal_add_css(drupal_get_path('module', 'sitenow_people') . '/css/sitenow_people.css');
 
-
-/**
-* Create menu item
-*/
-
-$menu_links = array(
-    'link_path' => drupal_get_normal_path('people'),
-    'link_title' =>  t('People'),
-	'menu_name' => 'main-menu',
-    'weight' => 2,
-  );
-  
-menu_link_save($menu_links);
-menu_cache_clear_all();
-
 /**
 * Implements hook_field_default_fields_alter().
 *
