@@ -191,11 +191,10 @@ function sitenow_people_views_default_views() {
   $handler->display->display_options['fields']['field_person_type']['delta_reversed'] = 0;
   $handler->display->display_options['fields']['field_person_type']['delta_first_last'] = 0;
   $handler->display->display_options['fields']['field_person_type']['field_api_classes'] = 0;
-  /* Field: Content: Body */
+  /* Field: Content: Bio */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
-  $handler->display->display_options['fields']['body']['label'] = 'Bio';
   $handler->display->display_options['fields']['body']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['body']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['body']['alter']['absolute'] = 0;
@@ -649,7 +648,7 @@ function sitenow_people_views_default_views() {
   $handler->display->display_options['fields']['field_person_office']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_person_office']['hide_alter_empty'] = 1;
   $handler->display->display_options['fields']['field_person_office']['field_api_classes'] = 0;
-  /* Field: Content: Body */
+  /* Field: Content: Bio */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
