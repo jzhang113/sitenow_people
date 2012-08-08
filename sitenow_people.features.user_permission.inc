@@ -88,16 +88,6 @@ function sitenow_people_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: delete terms in 4.
-  $permissions['delete terms in 4'] = array(
-    'name' => 'delete terms in 4',
-    'roles' => array(
-      0 => 'administrator',
-      1 => 'webmaster',
-    ),
-    'module' => 'taxonomy',
-  );
-
   // Exported permission: edit any people content.
   $permissions['edit any people content'] = array(
     'name' => 'edit any people content',
@@ -118,16 +108,6 @@ function sitenow_people_user_default_permissions() {
       2 => 'webmaster',
     ),
     'module' => 'node',
-  );
-
-  // Exported permission: edit terms in 4.
-  $permissions['edit terms in 4'] = array(
-    'name' => 'edit terms in 4',
-    'roles' => array(
-      0 => 'administrator',
-      1 => 'webmaster',
-    ),
-    'module' => 'taxonomy',
   );
 
   return $permissions;
