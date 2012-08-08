@@ -48,3 +48,17 @@ function sitenow_people_field_default_fields_alter(&$fields) {
     }
   }
 }
+
+/**
+* Implements hook_fmenu().
+*
+*/
+
+function sitenow_people_menu(){
+  $items['people'] = array(
+    'title' => 'People',
+    'description' => t('Link to People page'),
+    'menu_name' => 'main-menu',
+  );
+  return $items;
+}
