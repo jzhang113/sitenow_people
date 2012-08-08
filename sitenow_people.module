@@ -16,7 +16,7 @@ drupal_add_css(drupal_get_path('module', 'sitenow_people') . '/css/sitenow_peopl
 $menu_links = array(
     'link_path' => drupal_get_normal_path('people'),
     'link_title' =>  t('People'),
-	'menu_name' => 'main-menu'
+	'menu_name' => 'main-menu',
     'weight' => 2,
   );
   
