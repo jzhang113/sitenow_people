@@ -20,7 +20,8 @@ $menu_links = array(
     'weight' => 2,
   );
   
-menu_link_save($menu_links)
+menu_link_save($menu_links);
+menu_cache_clear_all();
 
 /**
 * Implements hook_field_default_fields_alter().
