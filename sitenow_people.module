@@ -29,6 +29,10 @@ function sitenow_people_menu() {
   return $items;
 }
 
+function sitenow_people_menu_alter(&$items) {
+  $items['people']['menu_name'] = 'main-menu';
+}
+
 
 /**
 * Implements hook_field_default_fields_alter().
