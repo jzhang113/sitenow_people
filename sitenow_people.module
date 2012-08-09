@@ -9,6 +9,28 @@ include_once 'sitenow_people.features.inc';
 drupal_add_css(drupal_get_path('module', 'sitenow_people') . '/css/sitenow_people.css');
 
 /**
+* Implements hook_menu().
+*
+*/
+
+function sitenow_people_menu() {
+  $items['people'] = array(
+    'title'           => 'People',
+    'description'     => t('People'),
+    'menu_name'       => 'main-menu',
+    'weight'          => 8,
+    'access callback' => TRUE,
+    'page callback'   => 'drupal_goto',
+    'page arguments' => array('people'),
+   // 'access arguments' => array('view own profile'), // permission
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+}
+
+
+/**
 * Implements hook_field_default_fields_alter().
 *
 * Alter the default fields right before they are cached into the database.
