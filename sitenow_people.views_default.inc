@@ -10,7 +10,7 @@
 function sitenow_people_views_default_views() {
   $export = array();
 
-  $view = new view;
+  $view = new view();
   $view->name = 'people';
   $view->description = '';
   $view->tag = 'default';
@@ -22,6 +22,7 @@ function sitenow_people_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
@@ -35,17 +36,8 @@ function sitenow_people_views_default_views() {
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['alter_text'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['make_link'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['absolute'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['trim'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['title']['hide_empty'] = 0;
-  $handler->display->display_options['fields']['title']['empty_zero'] = 0;
-  $handler->display->display_options['fields']['title']['link_to_node'] = 1;
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -68,12 +60,12 @@ function sitenow_people_views_default_views() {
 
   /* Display: Table of People */
   $handler = $view->new_display('panel_pane', 'Table of People', 'panel_pane_people_table');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'mini';
   $handler->display->display_options['pager']['options']['items_per_page'] = '20';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all'] = 0;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
@@ -89,9 +81,6 @@ function sitenow_people_views_default_views() {
       'empty_column' => 0,
     ),
   );
-  $handler->display->display_options['style_options']['override'] = 1;
-  $handler->display->display_options['style_options']['sticky'] = 0;
-  $handler->display->display_options['style_options']['empty_table'] = 0;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
@@ -100,241 +89,67 @@ function sitenow_people_views_default_views() {
   $handler->display->display_options['fields']['field_person_image']['id'] = 'field_person_image';
   $handler->display->display_options['fields']['field_person_image']['table'] = 'field_data_field_person_image';
   $handler->display->display_options['fields']['field_person_image']['field'] = 'field_person_image';
-  $handler->display->display_options['fields']['field_person_image']['alter']['alter_text'] = 0;
-  $handler->display->display_options['fields']['field_person_image']['alter']['make_link'] = 0;
-  $handler->display->display_options['fields']['field_person_image']['alter']['absolute'] = 0;
-  $handler->display->display_options['fields']['field_person_image']['alter']['external'] = 0;
-  $handler->display->display_options['fields']['field_person_image']['alter']['replace_spaces'] = 0;
-  $handler->display->display_options['fields']['field_person_image']['alter']['trim_whitespace'] = 0;
-  $handler->display->display_options['fields']['field_person_image']['alter']['nl2br'] = 0;
-  $handler->display->display_options['fields']['field_person_image']['alter']['word_boundary'] = 1;
-  $handler->display->display_options['fields']['field_person_image']['alter']['ellipsis'] = 1;
-  $handler->display->display_options['fields']['field_person_image']['alter']['more_link'] = 0;
-  $handler->display->display_options['fields']['field_person_image']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['field_person_image']['alter']['trim'] = 0;
-  $handler->display->display_options['fields']['field_person_image']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['field_person_image']['element_label_colon'] = 0;
-  $handler->display->display_options['fields']['field_person_image']['element_default_classes'] = 1;
-  $handler->display->display_options['fields']['field_person_image']['hide_empty'] = 0;
-  $handler->display->display_options['fields']['field_person_image']['empty_zero'] = 0;
-  $handler->display->display_options['fields']['field_person_image']['hide_alter_empty'] = 1;
+  $handler->display->display_options['fields']['field_person_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_person_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_person_image']['settings'] = array(
     'image_style' => 'thumbnail',
     'image_link' => '',
   );
-  $handler->display->display_options['fields']['field_person_image']['field_api_classes'] = 0;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['alter_text'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['make_link'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['absolute'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['trim'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['title']['hide_empty'] = 0;
-  $handler->display->display_options['fields']['title']['empty_zero'] = 0;
-  $handler->display->display_options['fields']['title']['link_to_node'] = 1;
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   /* Field: Content: Position */
   $handler->display->display_options['fields']['field_person_position']['id'] = 'field_person_position';
   $handler->display->display_options['fields']['field_person_position']['table'] = 'field_data_field_person_position';
   $handler->display->display_options['fields']['field_person_position']['field'] = 'field_person_position';
-  $handler->display->display_options['fields']['field_person_position']['alter']['alter_text'] = 0;
-  $handler->display->display_options['fields']['field_person_position']['alter']['make_link'] = 0;
-  $handler->display->display_options['fields']['field_person_position']['alter']['absolute'] = 0;
-  $handler->display->display_options['fields']['field_person_position']['alter']['external'] = 0;
-  $handler->display->display_options['fields']['field_person_position']['alter']['replace_spaces'] = 0;
-  $handler->display->display_options['fields']['field_person_position']['alter']['trim_whitespace'] = 0;
-  $handler->display->display_options['fields']['field_person_position']['alter']['nl2br'] = 0;
-  $handler->display->display_options['fields']['field_person_position']['alter']['word_boundary'] = 1;
-  $handler->display->display_options['fields']['field_person_position']['alter']['ellipsis'] = 1;
-  $handler->display->display_options['fields']['field_person_position']['alter']['more_link'] = 0;
-  $handler->display->display_options['fields']['field_person_position']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['field_person_position']['alter']['trim'] = 0;
-  $handler->display->display_options['fields']['field_person_position']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['field_person_position']['element_label_colon'] = 0;
-  $handler->display->display_options['fields']['field_person_position']['element_default_classes'] = 1;
-  $handler->display->display_options['fields']['field_person_position']['hide_empty'] = 0;
-  $handler->display->display_options['fields']['field_person_position']['empty_zero'] = 0;
-  $handler->display->display_options['fields']['field_person_position']['hide_alter_empty'] = 1;
-  $handler->display->display_options['fields']['field_person_position']['field_api_classes'] = 0;
+  $handler->display->display_options['fields']['field_person_position']['element_label_colon'] = FALSE;
   /* Field: Content: Person Type */
   $handler->display->display_options['fields']['field_person_type']['id'] = 'field_person_type';
   $handler->display->display_options['fields']['field_person_type']['table'] = 'field_data_field_person_type';
   $handler->display->display_options['fields']['field_person_type']['field'] = 'field_person_type';
-  $handler->display->display_options['fields']['field_person_type']['alter']['alter_text'] = 0;
-  $handler->display->display_options['fields']['field_person_type']['alter']['make_link'] = 0;
-  $handler->display->display_options['fields']['field_person_type']['alter']['absolute'] = 0;
-  $handler->display->display_options['fields']['field_person_type']['alter']['external'] = 0;
-  $handler->display->display_options['fields']['field_person_type']['alter']['replace_spaces'] = 0;
-  $handler->display->display_options['fields']['field_person_type']['alter']['trim_whitespace'] = 0;
-  $handler->display->display_options['fields']['field_person_type']['alter']['nl2br'] = 0;
-  $handler->display->display_options['fields']['field_person_type']['alter']['word_boundary'] = 1;
-  $handler->display->display_options['fields']['field_person_type']['alter']['ellipsis'] = 1;
-  $handler->display->display_options['fields']['field_person_type']['alter']['more_link'] = 0;
-  $handler->display->display_options['fields']['field_person_type']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['field_person_type']['alter']['trim'] = 0;
-  $handler->display->display_options['fields']['field_person_type']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['field_person_type']['element_label_colon'] = 0;
-  $handler->display->display_options['fields']['field_person_type']['element_default_classes'] = 1;
-  $handler->display->display_options['fields']['field_person_type']['hide_empty'] = 0;
-  $handler->display->display_options['fields']['field_person_type']['empty_zero'] = 0;
-  $handler->display->display_options['fields']['field_person_type']['hide_alter_empty'] = 1;
+  $handler->display->display_options['fields']['field_person_type']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_person_type']['type'] = 'taxonomy_term_reference_plain';
-  $handler->display->display_options['fields']['field_person_type']['group_rows'] = 1;
   $handler->display->display_options['fields']['field_person_type']['delta_offset'] = '0';
-  $handler->display->display_options['fields']['field_person_type']['delta_reversed'] = 0;
-  $handler->display->display_options['fields']['field_person_type']['delta_first_last'] = 0;
-  $handler->display->display_options['fields']['field_person_type']['field_api_classes'] = 0;
-  /* Field: Content: Bio */
+  /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
-  $handler->display->display_options['fields']['body']['alter']['alter_text'] = 0;
-  $handler->display->display_options['fields']['body']['alter']['make_link'] = 0;
-  $handler->display->display_options['fields']['body']['alter']['absolute'] = 0;
-  $handler->display->display_options['fields']['body']['alter']['external'] = 0;
-  $handler->display->display_options['fields']['body']['alter']['replace_spaces'] = 0;
-  $handler->display->display_options['fields']['body']['alter']['trim_whitespace'] = 0;
-  $handler->display->display_options['fields']['body']['alter']['nl2br'] = 0;
-  $handler->display->display_options['fields']['body']['alter']['word_boundary'] = 1;
-  $handler->display->display_options['fields']['body']['alter']['ellipsis'] = 1;
-  $handler->display->display_options['fields']['body']['alter']['more_link'] = 0;
-  $handler->display->display_options['fields']['body']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['body']['alter']['trim'] = 0;
-  $handler->display->display_options['fields']['body']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['body']['element_label_colon'] = 0;
-  $handler->display->display_options['fields']['body']['element_default_classes'] = 1;
-  $handler->display->display_options['fields']['body']['hide_empty'] = 0;
-  $handler->display->display_options['fields']['body']['empty_zero'] = 0;
-  $handler->display->display_options['fields']['body']['hide_alter_empty'] = 1;
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
   $handler->display->display_options['fields']['body']['settings'] = array(
     'trim_length' => '100',
   );
-  $handler->display->display_options['fields']['body']['field_api_classes'] = 0;
   /* Field: Content: Email */
   $handler->display->display_options['fields']['field_person_email']['id'] = 'field_person_email';
   $handler->display->display_options['fields']['field_person_email']['table'] = 'field_data_field_person_email';
   $handler->display->display_options['fields']['field_person_email']['field'] = 'field_person_email';
-  $handler->display->display_options['fields']['field_person_email']['alter']['alter_text'] = 0;
-  $handler->display->display_options['fields']['field_person_email']['alter']['make_link'] = 0;
-  $handler->display->display_options['fields']['field_person_email']['alter']['absolute'] = 0;
-  $handler->display->display_options['fields']['field_person_email']['alter']['external'] = 0;
-  $handler->display->display_options['fields']['field_person_email']['alter']['replace_spaces'] = 0;
-  $handler->display->display_options['fields']['field_person_email']['alter']['trim_whitespace'] = 0;
-  $handler->display->display_options['fields']['field_person_email']['alter']['nl2br'] = 0;
-  $handler->display->display_options['fields']['field_person_email']['alter']['word_boundary'] = 1;
-  $handler->display->display_options['fields']['field_person_email']['alter']['ellipsis'] = 1;
-  $handler->display->display_options['fields']['field_person_email']['alter']['more_link'] = 0;
-  $handler->display->display_options['fields']['field_person_email']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['field_person_email']['alter']['trim'] = 0;
-  $handler->display->display_options['fields']['field_person_email']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['field_person_email']['element_label_colon'] = 0;
-  $handler->display->display_options['fields']['field_person_email']['element_default_classes'] = 1;
-  $handler->display->display_options['fields']['field_person_email']['hide_empty'] = 0;
-  $handler->display->display_options['fields']['field_person_email']['empty_zero'] = 0;
-  $handler->display->display_options['fields']['field_person_email']['hide_alter_empty'] = 1;
-  $handler->display->display_options['fields']['field_person_email']['field_api_classes'] = 0;
+  $handler->display->display_options['fields']['field_person_email']['element_label_colon'] = FALSE;
   /* Field: Content: Office */
   $handler->display->display_options['fields']['field_person_office']['id'] = 'field_person_office';
   $handler->display->display_options['fields']['field_person_office']['table'] = 'field_data_field_person_office';
   $handler->display->display_options['fields']['field_person_office']['field'] = 'field_person_office';
-  $handler->display->display_options['fields']['field_person_office']['alter']['alter_text'] = 0;
-  $handler->display->display_options['fields']['field_person_office']['alter']['make_link'] = 0;
-  $handler->display->display_options['fields']['field_person_office']['alter']['absolute'] = 0;
-  $handler->display->display_options['fields']['field_person_office']['alter']['external'] = 0;
-  $handler->display->display_options['fields']['field_person_office']['alter']['replace_spaces'] = 0;
-  $handler->display->display_options['fields']['field_person_office']['alter']['trim_whitespace'] = 0;
-  $handler->display->display_options['fields']['field_person_office']['alter']['nl2br'] = 0;
-  $handler->display->display_options['fields']['field_person_office']['alter']['word_boundary'] = 1;
-  $handler->display->display_options['fields']['field_person_office']['alter']['ellipsis'] = 1;
-  $handler->display->display_options['fields']['field_person_office']['alter']['more_link'] = 0;
-  $handler->display->display_options['fields']['field_person_office']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['field_person_office']['alter']['trim'] = 0;
-  $handler->display->display_options['fields']['field_person_office']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['field_person_office']['element_label_colon'] = 0;
-  $handler->display->display_options['fields']['field_person_office']['element_default_classes'] = 1;
-  $handler->display->display_options['fields']['field_person_office']['hide_empty'] = 0;
-  $handler->display->display_options['fields']['field_person_office']['empty_zero'] = 0;
-  $handler->display->display_options['fields']['field_person_office']['hide_alter_empty'] = 1;
-  $handler->display->display_options['fields']['field_person_office']['field_api_classes'] = 0;
+  $handler->display->display_options['fields']['field_person_office']['element_label_colon'] = FALSE;
   /* Field: Content: Phone */
   $handler->display->display_options['fields']['field_person_phone']['id'] = 'field_person_phone';
   $handler->display->display_options['fields']['field_person_phone']['table'] = 'field_data_field_person_phone';
   $handler->display->display_options['fields']['field_person_phone']['field'] = 'field_person_phone';
-  $handler->display->display_options['fields']['field_person_phone']['alter']['alter_text'] = 0;
-  $handler->display->display_options['fields']['field_person_phone']['alter']['make_link'] = 0;
-  $handler->display->display_options['fields']['field_person_phone']['alter']['absolute'] = 0;
-  $handler->display->display_options['fields']['field_person_phone']['alter']['external'] = 0;
-  $handler->display->display_options['fields']['field_person_phone']['alter']['replace_spaces'] = 0;
-  $handler->display->display_options['fields']['field_person_phone']['alter']['trim_whitespace'] = 0;
-  $handler->display->display_options['fields']['field_person_phone']['alter']['nl2br'] = 0;
-  $handler->display->display_options['fields']['field_person_phone']['alter']['word_boundary'] = 1;
-  $handler->display->display_options['fields']['field_person_phone']['alter']['ellipsis'] = 1;
-  $handler->display->display_options['fields']['field_person_phone']['alter']['more_link'] = 0;
-  $handler->display->display_options['fields']['field_person_phone']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['field_person_phone']['alter']['trim'] = 0;
-  $handler->display->display_options['fields']['field_person_phone']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['field_person_phone']['element_label_colon'] = 0;
-  $handler->display->display_options['fields']['field_person_phone']['element_default_classes'] = 1;
-  $handler->display->display_options['fields']['field_person_phone']['hide_empty'] = 0;
-  $handler->display->display_options['fields']['field_person_phone']['empty_zero'] = 0;
-  $handler->display->display_options['fields']['field_person_phone']['hide_alter_empty'] = 1;
-  $handler->display->display_options['fields']['field_person_phone']['field_api_classes'] = 0;
+  $handler->display->display_options['fields']['field_person_phone']['element_label_colon'] = FALSE;
   /* Field: Content: Website */
   $handler->display->display_options['fields']['field_person_website']['id'] = 'field_person_website';
   $handler->display->display_options['fields']['field_person_website']['table'] = 'field_data_field_person_website';
   $handler->display->display_options['fields']['field_person_website']['field'] = 'field_person_website';
-  $handler->display->display_options['fields']['field_person_website']['alter']['alter_text'] = 0;
-  $handler->display->display_options['fields']['field_person_website']['alter']['make_link'] = 0;
-  $handler->display->display_options['fields']['field_person_website']['alter']['absolute'] = 0;
-  $handler->display->display_options['fields']['field_person_website']['alter']['external'] = 0;
-  $handler->display->display_options['fields']['field_person_website']['alter']['replace_spaces'] = 0;
-  $handler->display->display_options['fields']['field_person_website']['alter']['trim_whitespace'] = 0;
-  $handler->display->display_options['fields']['field_person_website']['alter']['nl2br'] = 0;
-  $handler->display->display_options['fields']['field_person_website']['alter']['word_boundary'] = 1;
-  $handler->display->display_options['fields']['field_person_website']['alter']['ellipsis'] = 1;
-  $handler->display->display_options['fields']['field_person_website']['alter']['more_link'] = 0;
-  $handler->display->display_options['fields']['field_person_website']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['field_person_website']['alter']['trim'] = 0;
-  $handler->display->display_options['fields']['field_person_website']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['field_person_website']['element_label_colon'] = 0;
-  $handler->display->display_options['fields']['field_person_website']['element_default_classes'] = 1;
-  $handler->display->display_options['fields']['field_person_website']['hide_empty'] = 0;
-  $handler->display->display_options['fields']['field_person_website']['empty_zero'] = 0;
-  $handler->display->display_options['fields']['field_person_website']['hide_alter_empty'] = 1;
+  $handler->display->display_options['fields']['field_person_website']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_person_website']['click_sort_column'] = 'url';
-  $handler->display->display_options['fields']['field_person_website']['field_api_classes'] = 0;
   /* Field: Content: CV */
   $handler->display->display_options['fields']['field_person_cv']['id'] = 'field_person_cv';
   $handler->display->display_options['fields']['field_person_cv']['table'] = 'field_data_field_person_cv';
   $handler->display->display_options['fields']['field_person_cv']['field'] = 'field_person_cv';
-  $handler->display->display_options['fields']['field_person_cv']['alter']['alter_text'] = 0;
-  $handler->display->display_options['fields']['field_person_cv']['alter']['make_link'] = 0;
-  $handler->display->display_options['fields']['field_person_cv']['alter']['absolute'] = 0;
-  $handler->display->display_options['fields']['field_person_cv']['alter']['external'] = 0;
-  $handler->display->display_options['fields']['field_person_cv']['alter']['replace_spaces'] = 0;
-  $handler->display->display_options['fields']['field_person_cv']['alter']['trim_whitespace'] = 0;
-  $handler->display->display_options['fields']['field_person_cv']['alter']['nl2br'] = 0;
-  $handler->display->display_options['fields']['field_person_cv']['alter']['word_boundary'] = 1;
-  $handler->display->display_options['fields']['field_person_cv']['alter']['ellipsis'] = 1;
-  $handler->display->display_options['fields']['field_person_cv']['alter']['more_link'] = 0;
-  $handler->display->display_options['fields']['field_person_cv']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['field_person_cv']['alter']['trim'] = 0;
-  $handler->display->display_options['fields']['field_person_cv']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['field_person_cv']['element_label_colon'] = 0;
-  $handler->display->display_options['fields']['field_person_cv']['element_default_classes'] = 1;
-  $handler->display->display_options['fields']['field_person_cv']['hide_empty'] = 0;
-  $handler->display->display_options['fields']['field_person_cv']['empty_zero'] = 0;
-  $handler->display->display_options['fields']['field_person_cv']['hide_alter_empty'] = 1;
+  $handler->display->display_options['fields']['field_person_cv']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_person_cv']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_person_cv']['field_api_classes'] = 0;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Draggableviews: Weight */
   $handler->display->display_options['sorts']['weight']['id'] = 'weight';
@@ -358,6 +173,248 @@ function sitenow_people_views_default_views() {
   $handler->display->display_options['allow']['path_override'] = 0;
   $handler->display->display_options['allow']['title_override'] = 'title_override';
   $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 'fields_override';
+
+  /* Display: Grid view of People */
+  $handler = $view->new_display('panel_pane', 'Grid view of People', 'panel_pane_people_grid');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'mini';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Photo */
+  $handler->display->display_options['fields']['field_person_image']['id'] = 'field_person_image';
+  $handler->display->display_options['fields']['field_person_image']['table'] = 'field_data_field_person_image';
+  $handler->display->display_options['fields']['field_person_image']['field'] = 'field_person_image';
+  $handler->display->display_options['fields']['field_person_image']['label'] = '';
+  $handler->display->display_options['fields']['field_person_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_person_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_person_image']['settings'] = array(
+    'image_style' => 'person_large',
+    'image_link' => '',
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Position */
+  $handler->display->display_options['fields']['field_person_position']['id'] = 'field_person_position';
+  $handler->display->display_options['fields']['field_person_position']['table'] = 'field_data_field_person_position';
+  $handler->display->display_options['fields']['field_person_position']['field'] = 'field_person_position';
+  $handler->display->display_options['fields']['field_person_position']['label'] = '';
+  $handler->display->display_options['fields']['field_person_position']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Draggableviews: Weight */
+  $handler->display->display_options['sorts']['weight']['id'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['table'] = 'draggableviews_structure';
+  $handler->display->display_options['sorts']['weight']['field'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['draggableviews_setting_view'] = 'people:page_1';
+  $handler->display->display_options['sorts']['weight']['draggableviews_setting_new_items_bottom_list'] = 1;
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  $handler->display->display_options['pane_description'] = 'Grid layout of people';
+  $handler->display->display_options['pane_category']['name'] = 'People';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['allow']['use_pager'] = 'use_pager';
+  $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
+
+  /* Display: Sidebar List of People */
+  $handler = $view->new_display('panel_pane', 'Sidebar List of People', 'panel_pane_people_sidebar');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['use_more'] = TRUE;
+  $handler->display->display_options['defaults']['link_display'] = FALSE;
+  $handler->display->display_options['link_display'] = 'custom_url';
+  $handler->display->display_options['link_url'] = 'people';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Person photo (large 220x220) */
+  $handler->display->display_options['fields']['field_person_image_1']['id'] = 'field_person_image_1';
+  $handler->display->display_options['fields']['field_person_image_1']['table'] = 'field_data_field_person_image';
+  $handler->display->display_options['fields']['field_person_image_1']['field'] = 'field_person_image';
+  $handler->display->display_options['fields']['field_person_image_1']['ui_name'] = 'Person photo (large 220x220)';
+  $handler->display->display_options['fields']['field_person_image_1']['label'] = '';
+  $handler->display->display_options['fields']['field_person_image_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_person_image_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_person_image_1']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_person_image_1']['settings'] = array(
+    'image_style' => 'person_large',
+    'image_link' => '',
+  );
+  /* Field: Person photo (thumbnail 100x100) */
+  $handler->display->display_options['fields']['field_person_image']['id'] = 'field_person_image';
+  $handler->display->display_options['fields']['field_person_image']['table'] = 'field_data_field_person_image';
+  $handler->display->display_options['fields']['field_person_image']['field'] = 'field_person_image';
+  $handler->display->display_options['fields']['field_person_image']['ui_name'] = 'Person photo (thumbnail 100x100)';
+  $handler->display->display_options['fields']['field_person_image']['label'] = '';
+  $handler->display->display_options['fields']['field_person_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_person_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_person_image']['settings'] = array(
+    'image_style' => 'thumbnail',
+    'image_link' => '',
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Position */
+  $handler->display->display_options['fields']['field_person_position']['id'] = 'field_person_position';
+  $handler->display->display_options['fields']['field_person_position']['table'] = 'field_data_field_person_position';
+  $handler->display->display_options['fields']['field_person_position']['field'] = 'field_person_position';
+  $handler->display->display_options['fields']['field_person_position']['label'] = '';
+  $handler->display->display_options['fields']['field_person_position']['element_label_colon'] = FALSE;
+  /* Field: Content: Email */
+  $handler->display->display_options['fields']['field_person_email']['id'] = 'field_person_email';
+  $handler->display->display_options['fields']['field_person_email']['table'] = 'field_data_field_person_email';
+  $handler->display->display_options['fields']['field_person_email']['field'] = 'field_person_email';
+  $handler->display->display_options['fields']['field_person_email']['label'] = '';
+  $handler->display->display_options['fields']['field_person_email']['element_label_colon'] = FALSE;
+  /* Field: Content: Phone */
+  $handler->display->display_options['fields']['field_person_phone']['id'] = 'field_person_phone';
+  $handler->display->display_options['fields']['field_person_phone']['table'] = 'field_data_field_person_phone';
+  $handler->display->display_options['fields']['field_person_phone']['field'] = 'field_person_phone';
+  $handler->display->display_options['fields']['field_person_phone']['label'] = '';
+  $handler->display->display_options['fields']['field_person_phone']['element_label_colon'] = FALSE;
+  /* Field: Content: Office */
+  $handler->display->display_options['fields']['field_person_office']['id'] = 'field_person_office';
+  $handler->display->display_options['fields']['field_person_office']['table'] = 'field_data_field_person_office';
+  $handler->display->display_options['fields']['field_person_office']['field'] = 'field_person_office';
+  $handler->display->display_options['fields']['field_person_office']['label'] = '';
+  $handler->display->display_options['fields']['field_person_office']['element_label_colon'] = FALSE;
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
+  $handler->display->display_options['fields']['body']['settings'] = array(
+    'trim_length' => '200',
+  );
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Draggableviews: Weight */
+  $handler->display->display_options['sorts']['weight']['id'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['table'] = 'draggableviews_structure';
+  $handler->display->display_options['sorts']['weight']['field'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['draggableviews_setting_view'] = 'people:page_1';
+  $handler->display->display_options['sorts']['weight']['draggableviews_setting_new_items_bottom_list'] = 1;
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  $handler->display->display_options['pane_description'] = 'List of People';
+  $handler->display->display_options['pane_category']['name'] = 'People';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 'more_link';
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 'fields_override';
+
+  /* Display: Order of People Content */
+  $handler = $view->new_display('page', 'Order of People Content', 'page_people_order');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'People';
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    3 => '3',
+    5 => '5',
+  );
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'title' => 'title',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'title' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Photo */
+  $handler->display->display_options['fields']['field_person_image']['id'] = 'field_person_image';
+  $handler->display->display_options['fields']['field_person_image']['table'] = 'field_data_field_person_image';
+  $handler->display->display_options['fields']['field_person_image']['field'] = 'field_person_image';
+  $handler->display->display_options['fields']['field_person_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_person_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_person_image']['settings'] = array(
+    'image_style' => 'thumbnail',
+    'image_link' => '',
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Draggableviews: Content */
+  $handler->display->display_options['fields']['draggableviews']['id'] = 'draggableviews';
+  $handler->display->display_options['fields']['draggableviews']['table'] = 'node';
+  $handler->display->display_options['fields']['draggableviews']['field'] = 'draggableviews';
+  $handler->display->display_options['fields']['draggableviews']['label'] = '';
+  $handler->display->display_options['fields']['draggableviews']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['draggableviews']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['draggableviews']['hide_alter_empty'] = FALSE;
+  $handler->display->display_options['fields']['draggableviews']['draggableviews']['ajax'] = 0;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Draggableviews: Weight */
+  $handler->display->display_options['sorts']['weight']['id'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['table'] = 'draggableviews_structure';
+  $handler->display->display_options['sorts']['weight']['field'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['draggableviews_setting_view'] = 'self';
+  $handler->display->display_options['sorts']['weight']['draggableviews_setting_new_items_bottom_list'] = 1;
+  $handler->display->display_options['path'] = 'admin/config/order-people';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Order of People';
+  $handler->display->display_options['menu']['description'] = 'This allows you to set the order ';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'management';
+  $handler->display->display_options['menu']['context'] = 0;
+  $export['people'] = $view;
+
+  return $export;
+}
+>display_options['allow']['exposed_form'] = 0;
   $handler->display->display_options['allow']['fields_override'] = 'fields_override';
 
   /* Display: Grid view of People */

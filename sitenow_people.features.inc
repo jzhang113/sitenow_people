@@ -35,7 +35,7 @@ function sitenow_people_views_api() {
 function sitenow_people_image_default_styles() {
   $styles = array();
 
-  // Exported image style: person_large
+  // Exported image style: person_large.
   $styles['person_large'] = array(
     'name' => 'person_large',
     'effects' => array(

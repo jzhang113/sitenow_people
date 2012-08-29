@@ -10,7 +10,7 @@
 function sitenow_people_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'node-people-body'
+  // Exported field: 'node-people-body'.
   $fields['node-people-body'] = array(
     'field_config' => array(
       'active' => '1',
@@ -33,6 +33,7 @@ function sitenow_people_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '1',
@@ -89,7 +90,7 @@ function sitenow_people_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-people-field_people_first_name'
+  // Exported field: 'node-people-field_people_first_name'.
   $fields['node-people-field_people_first_name'] = array(
     'field_config' => array(
       'active' => '1',
@@ -110,6 +111,7 @@ function sitenow_people_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(
         'max_length' => '255',
@@ -163,7 +165,7 @@ function sitenow_people_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-people-field_people_last_name'
+  // Exported field: 'node-people-field_people_last_name'.
   $fields['node-people-field_people_last_name'] = array(
     'field_config' => array(
       'active' => '1',
@@ -184,6 +186,7 @@ function sitenow_people_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(
         'max_length' => '255',
@@ -237,7 +240,7 @@ function sitenow_people_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-people-field_person_cv'
+  // Exported field: 'node-people-field_person_cv'.
   $fields['node-people-field_person_cv'] = array(
     'field_config' => array(
       'active' => '1',
@@ -258,6 +261,7 @@ function sitenow_people_field_default_fields() {
           0 => 'fid',
         ),
       ),
+      'locked' => '0',
       'module' => 'file',
       'settings' => array(
         'display_default' => 0,
@@ -315,7 +319,7 @@ function sitenow_people_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-people-field_person_email'
+  // Exported field: 'node-people-field_person_email'.
   $fields['node-people-field_person_email'] = array(
     'field_config' => array(
       'active' => '1',
@@ -325,6 +329,7 @@ function sitenow_people_field_default_fields() {
       'field_name' => 'field_person_email',
       'foreign keys' => array(),
       'indexes' => array(),
+      'locked' => '0',
       'module' => 'email',
       'settings' => array(),
       'translatable' => '0',
@@ -375,7 +380,7 @@ function sitenow_people_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-people-field_person_image'
+  // Exported field: 'node-people-field_person_image'.
   $fields['node-people-field_person_image'] = array(
     'field_config' => array(
       'active' => '1',
@@ -396,6 +401,7 @@ function sitenow_people_field_default_fields() {
           0 => 'fid',
         ),
       ),
+      'locked' => '0',
       'module' => 'image',
       'settings' => array(
         'default_image' => '9',
@@ -473,7 +479,7 @@ function sitenow_people_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-people-field_person_office'
+  // Exported field: 'node-people-field_person_office'.
   $fields['node-people-field_person_office'] = array(
     'field_config' => array(
       'active' => '1',
@@ -494,6 +500,7 @@ function sitenow_people_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '0',
@@ -545,7 +552,7 @@ function sitenow_people_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-people-field_person_phone'
+  // Exported field: 'node-people-field_person_phone'.
   $fields['node-people-field_person_phone'] = array(
     'field_config' => array(
       'active' => '1',
@@ -555,6 +562,7 @@ function sitenow_people_field_default_fields() {
       'field_name' => 'field_person_phone',
       'foreign keys' => array(),
       'indexes' => array(),
+      'locked' => '0',
       'module' => 'phone',
       'settings' => array(
         'country' => 'ca',
@@ -610,7 +618,7 @@ function sitenow_people_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-people-field_person_position'
+  // Exported field: 'node-people-field_person_position'.
   $fields['node-people-field_person_position'] = array(
     'field_config' => array(
       'active' => '1',
@@ -631,6 +639,7 @@ function sitenow_people_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(
         'max_length' => '255',
@@ -684,7 +693,7 @@ function sitenow_people_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-people-field_person_type'
+  // Exported field: 'node-people-field_person_type'.
   $fields['node-people-field_person_type'] = array(
     'field_config' => array(
       'active' => '1',
@@ -705,6 +714,7 @@ function sitenow_people_field_default_fields() {
           0 => 'tid',
         ),
       ),
+      'locked' => '0',
       'module' => 'taxonomy',
       'settings' => array(
         'allowed_values' => array(
@@ -760,7 +770,7 @@ function sitenow_people_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-people-field_person_website'
+  // Exported field: 'node-people-field_person_website'.
   $fields['node-people-field_person_website'] = array(
     'field_config' => array(
       'active' => '1',
@@ -770,6 +780,7 @@ function sitenow_people_field_default_fields() {
       'field_name' => 'field_person_website',
       'foreign keys' => array(),
       'indexes' => array(),
+      'locked' => '0',
       'module' => 'link',
       'settings' => array(
         'attributes' => array(
