@@ -18,10 +18,10 @@ function sitenow_people_default_page_manager_pages() {
   $page->path = 'people';
   $page->access = array();
   $page->menu = array(
-    'type' => 'normal',
-    'title' => 'People',
+    'type' => 'none',
+    'title' => '',
     'name' => 'main-menu',
-    'weight' => '3',
+    'weight' => '0',
     'parent' => array(
       'type' => 'none',
       'title' => '',
