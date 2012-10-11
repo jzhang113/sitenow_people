@@ -18,7 +18,7 @@ function sitenow_people_default_page_manager_pages() {
   $page->path = 'people';
   $page->access = array();
   $page->menu = array(
-    'type' => 'none',
+    'type' => 'normal',
     'title' => 'People',
     'name' => 'main-menu',
     'weight' => '3',

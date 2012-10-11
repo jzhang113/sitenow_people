@@ -76,3 +76,4 @@ features[variable][] = panelizer_node:people_default
 features[variable][] = pathauto_node_people_pattern
 features[variable][] = save_continue_people
 features[views_view][] = people
+project status url = http://dev.sitenow.uiowa.edu/features/fserver
