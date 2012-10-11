@@ -5,6 +5,7 @@ package = SiteNow Content
 php = 5.2.4
 version = 7.x-1.0
 project = sitenow_people_content
+dependencies[] = sitenow_people
 features[content][] = person_adam
 features[content][] = person_brian
 features[content][] = person_dan
