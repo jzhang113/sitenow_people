@@ -48,6 +48,13 @@ function sitenow_people_user_default_permissions() {
     'module' => 'panelizer',
   );
 
+  // Exported permission: administer panelizer node people overview.
+  $permissions['administer panelizer node people overview'] = array(
+    'name' => 'administer panelizer node people overview',
+    'roles' => array(),
+    'module' => 'panelizer',
+  );
+
   // Exported permission: administer panelizer node people settings.
   $permissions['administer panelizer node people settings'] = array(
     'name' => 'administer panelizer node people settings',
@@ -88,6 +95,13 @@ function sitenow_people_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: delete terms in 2.
+  $permissions['delete terms in 2'] = array(
+    'name' => 'delete terms in 2',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
   // Exported permission: edit any people content.
   $permissions['edit any people content'] = array(
     'name' => 'edit any people content',
@@ -108,6 +122,62 @@ function sitenow_people_user_default_permissions() {
       2 => 'webmaster',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: edit terms in 2.
+  $permissions['edit terms in 2'] = array(
+    'name' => 'edit terms in 2',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: enter people revision log entry.
+  $permissions['enter people revision log entry'] = array(
+    'name' => 'enter people revision log entry',
+    'roles' => array(),
+    'module' => 'override_node_options',
+  );
+
+  // Exported permission: override people authored by option.
+  $permissions['override people authored by option'] = array(
+    'name' => 'override people authored by option',
+    'roles' => array(),
+    'module' => 'override_node_options',
+  );
+
+  // Exported permission: override people authored on option.
+  $permissions['override people authored on option'] = array(
+    'name' => 'override people authored on option',
+    'roles' => array(),
+    'module' => 'override_node_options',
+  );
+
+  // Exported permission: override people promote to front page option.
+  $permissions['override people promote to front page option'] = array(
+    'name' => 'override people promote to front page option',
+    'roles' => array(),
+    'module' => 'override_node_options',
+  );
+
+  // Exported permission: override people published option.
+  $permissions['override people published option'] = array(
+    'name' => 'override people published option',
+    'roles' => array(),
+    'module' => 'override_node_options',
+  );
+
+  // Exported permission: override people revision option.
+  $permissions['override people revision option'] = array(
+    'name' => 'override people revision option',
+    'roles' => array(),
+    'module' => 'override_node_options',
+  );
+
+  // Exported permission: override people sticky option.
+  $permissions['override people sticky option'] = array(
+    'name' => 'override people sticky option',
+    'roles' => array(),
+    'module' => 'override_node_options',
   );
 
   return $permissions;
