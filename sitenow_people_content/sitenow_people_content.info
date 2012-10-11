@@ -17,4 +17,3 @@ features[content][] = people_pete
 features[content][] = people_rick
 features[content][] = people_romy
 features[features_api][] = api:1
-project status url = http://dev.sitenow.uiowa.edu/features/fserver
