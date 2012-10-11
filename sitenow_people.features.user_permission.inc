@@ -134,49 +134,70 @@ function sitenow_people_user_default_permissions() {
   // Exported permission: enter people revision log entry.
   $permissions['enter people revision log entry'] = array(
     'name' => 'enter people revision log entry',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'editor',
+      2 => 'webmaster',
+    ),
     'module' => 'override_node_options',
   );
 
   // Exported permission: override people authored by option.
   $permissions['override people authored by option'] = array(
     'name' => 'override people authored by option',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'webmaster',
+    ),
     'module' => 'override_node_options',
   );
 
   // Exported permission: override people authored on option.
   $permissions['override people authored on option'] = array(
     'name' => 'override people authored on option',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'webmaster',
+    ),
     'module' => 'override_node_options',
   );
 
   // Exported permission: override people promote to front page option.
   $permissions['override people promote to front page option'] = array(
     'name' => 'override people promote to front page option',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'webmaster',
+    ),
     'module' => 'override_node_options',
   );
 
   // Exported permission: override people published option.
   $permissions['override people published option'] = array(
     'name' => 'override people published option',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'editor',
+      2 => 'webmaster',
+    ),
     'module' => 'override_node_options',
   );
 
   // Exported permission: override people revision option.
   $permissions['override people revision option'] = array(
     'name' => 'override people revision option',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'override_node_options',
   );
 
   // Exported permission: override people sticky option.
   $permissions['override people sticky option'] = array(
     'name' => 'override people sticky option',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'override_node_options',
   );
 
