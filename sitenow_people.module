@@ -17,7 +17,7 @@ drupal_add_css(drupal_get_path('module', 'sitenow_people') . '/css/sitenow_peopl
 *   By reference. The fields that have been declared by another feature.
 */
 
-function sitenow_people_field_default_fields_alter(&$fields) {
+/*function sitenow_people_field_default_fields_alter(&$fields) {
   // Check the user picture field
   if (isset($fields['node-people-field_person_image'])) {
     // See if a default image hasn't been set for this field yet
@@ -47,4 +47,5 @@ function sitenow_people_field_default_fields_alter(&$fields) {
       $fields['node-people-field_person_image']['field_config']['settings']['default_image'] = (string) $fid;
     }
   }
-}
+}*/
+  
