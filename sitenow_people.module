@@ -48,4 +48,3 @@ drupal_add_css(drupal_get_path('module', 'sitenow_people') . '/css/sitenow_peopl
     }
   }
 }*/
-  
