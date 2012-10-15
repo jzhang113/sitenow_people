@@ -7,7 +7,7 @@ function sitenow_people_apps_app_info() {
     'configure form' => 'sitenow_people_apps_app_configure_form',
     'demo content module' => 'sitenow_people_content',
     //'status callback' => 'enterprise_blog_app_status',
-    'post install callback' => 'sitenow_people_app_post_install',
+    //'post install callback' => 'sitenow_people_app_post_install',
   );
 }
 
@@ -29,20 +29,4 @@ function sitenow_people_apps_app_configure_form($form, &$form_state) {
   );
     
   return $form;
-}
-
-/**
-* Post Install function for SiteNow People App
-*/
-function sitenow_people_app_post_install() {
-  // add menu item
-  $item = array(
-   'link_path' => 'people',
-   'link_title' => 'People',
-   'menu_name' => 'main-menu',
-);
-
-menu_link_save($item);
-menu_cache_clear_all();
-
 }
