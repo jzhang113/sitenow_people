@@ -35,14 +35,12 @@ function sitenow_people_apps_app_configure_form($form, &$form_state) {
 * Post Install function for SiteNow People App
 */
 function sitenow_people_app_post_install() {
-  // add menu item
   $item = array(
-   'link_path' => drupal_get_normal_path('admin/structure'),
-   'link_title' => 'People',
-   'menu_name' => 'main-menu',
-);
-
-menu_link_save($item);
-menu_cache_clear_all();
-
+  'link_path' => drupal_get_normal_path('people'),
+  'link_title' => 'People',
+  'menu_name' => 'main-menu',
+  );
+  
+  menu_link_save($item);
+  menu_cache_clear_all();
 }
