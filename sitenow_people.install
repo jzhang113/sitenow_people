@@ -1,0 +1,22 @@
+<?php
+
+//include helper file 
+include_once(drupal_get_path('module','sitenow_people') . '/sitenow_people.helper.inc');
+
+/**
+* Hook Enable
+*/
+
+function sitenow_people_enable() {
+  //call function to create menu link
+  sitenow_people_create_menu();
+}
+
+/**
+* Hook Disable
+*/
+
+function sitenow_people_disable() {
+  //call function to delete menu link
+  sitenow_people_delete_menu();
+}
