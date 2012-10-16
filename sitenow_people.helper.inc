@@ -2,6 +2,7 @@
 
 function sitenow_people_create_menu() {
 	// create menu item for sitenow_people panel page
+	menu_rebuild();
     $item = array(
     'link_path' => drupal_get_normal_path('people'),
     'link_title' => 'People',
