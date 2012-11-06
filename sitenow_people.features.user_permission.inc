@@ -23,42 +23,57 @@ function sitenow_people_user_default_permissions() {
   // Exported permission: administer panelizer node people content.
   $permissions['administer panelizer node people content'] = array(
     'name' => 'administer panelizer node people content',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'webmaster',
+    ),
     'module' => 'panelizer',
   );
 
   // Exported permission: administer panelizer node people context.
   $permissions['administer panelizer node people context'] = array(
     'name' => 'administer panelizer node people context',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'panelizer',
   );
 
   // Exported permission: administer panelizer node people defaults.
   $permissions['administer panelizer node people defaults'] = array(
     'name' => 'administer panelizer node people defaults',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'panelizer',
   );
 
   // Exported permission: administer panelizer node people layout.
   $permissions['administer panelizer node people layout'] = array(
     'name' => 'administer panelizer node people layout',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'webmaster',
+    ),
     'module' => 'panelizer',
   );
 
   // Exported permission: administer panelizer node people overview.
   $permissions['administer panelizer node people overview'] = array(
     'name' => 'administer panelizer node people overview',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'webmaster',
+    ),
     'module' => 'panelizer',
   );
 
   // Exported permission: administer panelizer node people settings.
   $permissions['administer panelizer node people settings'] = array(
     'name' => 'administer panelizer node people settings',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'panelizer',
   );
 
