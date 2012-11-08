@@ -14,8 +14,8 @@ function sitenow_people_user_default_permissions() {
   $permissions['access draggableviews'] = array(
     'name' => 'access draggableviews',
     'roles' => array(
-      0 => 'administrator',
-      1 => 'webmaster',
+      'administrator' => 'administrator',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'draggableviews',
   );
@@ -24,8 +24,8 @@ function sitenow_people_user_default_permissions() {
   $permissions['administer panelizer node people content'] = array(
     'name' => 'administer panelizer node people content',
     'roles' => array(
-      0 => 'administrator',
-      1 => 'webmaster',
+      'administrator' => 'administrator',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'panelizer',
   );
@@ -34,7 +34,7 @@ function sitenow_people_user_default_permissions() {
   $permissions['administer panelizer node people context'] = array(
     'name' => 'administer panelizer node people context',
     'roles' => array(
-      0 => 'administrator',
+      'administrator' => 'administrator',
     ),
     'module' => 'panelizer',
   );
@@ -43,7 +43,7 @@ function sitenow_people_user_default_permissions() {
   $permissions['administer panelizer node people defaults'] = array(
     'name' => 'administer panelizer node people defaults',
     'roles' => array(
-      0 => 'administrator',
+      'administrator' => 'administrator',
     ),
     'module' => 'panelizer',
   );
@@ -52,8 +52,8 @@ function sitenow_people_user_default_permissions() {
   $permissions['administer panelizer node people layout'] = array(
     'name' => 'administer panelizer node people layout',
     'roles' => array(
-      0 => 'administrator',
-      1 => 'webmaster',
+      'administrator' => 'administrator',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'panelizer',
   );
@@ -62,8 +62,8 @@ function sitenow_people_user_default_permissions() {
   $permissions['administer panelizer node people overview'] = array(
     'name' => 'administer panelizer node people overview',
     'roles' => array(
-      0 => 'administrator',
-      1 => 'webmaster',
+      'administrator' => 'administrator',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'panelizer',
   );
@@ -72,7 +72,7 @@ function sitenow_people_user_default_permissions() {
   $permissions['administer panelizer node people settings'] = array(
     'name' => 'administer panelizer node people settings',
     'roles' => array(
-      0 => 'administrator',
+      'administrator' => 'administrator',
     ),
     'module' => 'panelizer',
   );
@@ -81,9 +81,9 @@ function sitenow_people_user_default_permissions() {
   $permissions['create people content'] = array(
     'name' => 'create people content',
     'roles' => array(
-      0 => 'administrator',
-      1 => 'editor',
-      2 => 'webmaster',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'node',
   );
@@ -92,9 +92,9 @@ function sitenow_people_user_default_permissions() {
   $permissions['delete any people content'] = array(
     'name' => 'delete any people content',
     'roles' => array(
-      0 => 'administrator',
-      1 => 'editor',
-      2 => 'webmaster',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'node',
   );
@@ -103,9 +103,9 @@ function sitenow_people_user_default_permissions() {
   $permissions['delete own people content'] = array(
     'name' => 'delete own people content',
     'roles' => array(
-      0 => 'administrator',
-      1 => 'editor',
-      2 => 'webmaster',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'node',
   );
@@ -114,8 +114,8 @@ function sitenow_people_user_default_permissions() {
   $permissions['delete terms in 2'] = array(
     'name' => 'delete terms in 2',
     'roles' => array(
-      0 => 'administrator',
-      1 => 'webmaster',
+      'administrator' => 'administrator',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'taxonomy',
   );
@@ -124,9 +124,9 @@ function sitenow_people_user_default_permissions() {
   $permissions['edit any people content'] = array(
     'name' => 'edit any people content',
     'roles' => array(
-      0 => 'administrator',
-      1 => 'editor',
-      2 => 'webmaster',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'node',
   );
@@ -135,9 +135,9 @@ function sitenow_people_user_default_permissions() {
   $permissions['edit own people content'] = array(
     'name' => 'edit own people content',
     'roles' => array(
-      0 => 'administrator',
-      1 => 'editor',
-      2 => 'webmaster',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'node',
   );
@@ -146,8 +146,8 @@ function sitenow_people_user_default_permissions() {
   $permissions['edit terms in 2'] = array(
     'name' => 'edit terms in 2',
     'roles' => array(
-      0 => 'administrator',
-      1 => 'webmaster',
+      'administrator' => 'administrator',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'taxonomy',
   );
@@ -156,9 +156,9 @@ function sitenow_people_user_default_permissions() {
   $permissions['enter people revision log entry'] = array(
     'name' => 'enter people revision log entry',
     'roles' => array(
-      0 => 'administrator',
-      1 => 'editor',
-      2 => 'webmaster',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'override_node_options',
   );
@@ -167,8 +167,8 @@ function sitenow_people_user_default_permissions() {
   $permissions['override people authored by option'] = array(
     'name' => 'override people authored by option',
     'roles' => array(
-      0 => 'administrator',
-      1 => 'webmaster',
+      'administrator' => 'administrator',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'override_node_options',
   );
@@ -177,8 +177,8 @@ function sitenow_people_user_default_permissions() {
   $permissions['override people authored on option'] = array(
     'name' => 'override people authored on option',
     'roles' => array(
-      0 => 'administrator',
-      1 => 'webmaster',
+      'administrator' => 'administrator',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'override_node_options',
   );
@@ -187,8 +187,8 @@ function sitenow_people_user_default_permissions() {
   $permissions['override people promote to front page option'] = array(
     'name' => 'override people promote to front page option',
     'roles' => array(
-      0 => 'administrator',
-      1 => 'webmaster',
+      'administrator' => 'administrator',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'override_node_options',
   );
@@ -197,9 +197,9 @@ function sitenow_people_user_default_permissions() {
   $permissions['override people published option'] = array(
     'name' => 'override people published option',
     'roles' => array(
-      0 => 'administrator',
-      1 => 'editor',
-      2 => 'webmaster',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'override_node_options',
   );
@@ -208,7 +208,7 @@ function sitenow_people_user_default_permissions() {
   $permissions['override people revision option'] = array(
     'name' => 'override people revision option',
     'roles' => array(
-      0 => 'administrator',
+      'administrator' => 'administrator',
     ),
     'module' => 'override_node_options',
   );
@@ -217,7 +217,7 @@ function sitenow_people_user_default_permissions() {
   $permissions['override people sticky option'] = array(
     'name' => 'override people sticky option',
     'roles' => array(
-      0 => 'administrator',
+      'administrator' => 'administrator',
     ),
     'module' => 'override_node_options',
   );
