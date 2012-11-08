@@ -63,7 +63,6 @@ function sitenow_people_user_default_permissions() {
     'name' => 'administer panelizer node people overview',
     'roles' => array(
       'administrator' => 'administrator',
-      'webmaster' => 'webmaster',
     ),
     'module' => 'panelizer',
   );
