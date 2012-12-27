@@ -1,10 +1,3 @@
-* {
-  -webkit-box-sizing:border-box;
-  -moz-box-sizing:border-box;
-  -ms-box-sizing:border-box;
-  box-sizing:border-box;
-}
-
 .view-display-id-panel_pane_people_grid .views-row {
   width:25%;
   float:left;
