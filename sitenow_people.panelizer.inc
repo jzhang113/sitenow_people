@@ -28,6 +28,7 @@ function sitenow_people_panelizer_defaults() {
   $panelizer->css_class = '';
   $panelizer->title_element = 'H2';
   $panelizer->link_to_entity = TRUE;
+  $panelizer->extra = '';
   $display = new panels_display();
   $display->layout = 'burr_flipped';
   $display->layout_settings = array();
