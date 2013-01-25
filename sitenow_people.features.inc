@@ -81,9 +81,9 @@ function sitenow_people_image_default_styles() {
 function sitenow_people_node_info() {
   $items = array(
     'people' => array(
-      'name' => t('People'),
+      'name' => t('Person'),
       'base' => 'node_content',
-      'description' => t('Content type to add information about people'),
+      'description' => t('Used to create a directory of faculty/staff/students on your site. This is <strong>not</strong> used to give users access to your site.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
