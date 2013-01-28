@@ -6,8 +6,6 @@ function sitenow_people_apps_app_info() {
   return array(
     'configure form' => 'sitenow_people_apps_app_configure_form',
     'demo content module' => 'sitenow_people_content',
-    //'status callback' => 'enterprise_blog_app_status',
-    //'post install callback' => 'sitenow_people_app_post_install',
   );
 }
 
