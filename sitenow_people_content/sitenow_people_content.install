@@ -1,0 +1,34 @@
+<?php
+
+/*
+ * Implements hook_install().
+ */
+function sitenow_people_content_install() {
+  // Run migrations.
+  $migrations = migrate_migrations();
+  foreach ($migrations as $machine_name => $migration) {
+    if($machine_name == "SiteNowPeople") {
+      // Create an operation for the Batch API
+      $operations[] = array('_sitenow_content_import', array($machine_name, t('Importing SiteNow People content.')));
+    }
+  }
+
+  // Create a batch
+  $batch = array(
+    'title' => t('Importing content'),
+    'operations' => $operations,
+    'file' => drupal_get_path('module', 'sitenow_people_content') . '/sitenow_people_content.migrate.inc',
+  );
+
+  // Run the batch using Batch API
+  batch_set($batch);
+}
+
+/*
+ * Implements hook_disable().
+ */
+function sitenow_people_content_disable() {
+  // Deregister the SiteNowPeople migration on disabled, othewise warnings
+  // occur.
+  Migration::deregisterMigration('SiteNowPeople');
+}

@@ -10,6 +10,7 @@ dependencies[] = email
 dependencies[] = features
 dependencies[] = image
 dependencies[] = link
+dependencies[] = migrate
 dependencies[] = node
 dependencies[] = override_node_options
 dependencies[] = panelizer
