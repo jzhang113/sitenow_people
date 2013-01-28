@@ -16,6 +16,7 @@ dependencies[] = override_node_options
 dependencies[] = panelizer
 dependencies[] = phone
 dependencies[] = strongarm
+dependencies[] = sitenow_people_panels
 dependencies[] = taxonomy
 dependencies[] = text
 dependencies[] = views
@@ -78,3 +79,4 @@ features[views_view][] = people
 features_exclude[dependencies][ctools] = ctools
 features_exclude[dependencies][file] = file
 features_exclude[dependencies][options] = options
+
