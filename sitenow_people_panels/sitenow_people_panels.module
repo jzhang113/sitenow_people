@@ -28,10 +28,10 @@ function sitenow_people_panels_default_page_manager_pages() {
   $page->path = 'people';
   $page->access = array();
   $page->menu = array(
-    'type' => 'none',
-    'title' => '',
+    'type' => 'normal',
+    'title' => 'People',
     'name' => 'main-menu',
-    'weight' => '0',
+    'weight' => '3',
     'parent' => array(
       'type' => 'none',
       'title' => '',
