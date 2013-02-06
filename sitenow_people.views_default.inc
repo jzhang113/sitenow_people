@@ -144,7 +144,7 @@ function sitenow_people_views_default_views() {
   $handler->display->display_options['fields']['field_person_website']['field'] = 'field_person_website';
   $handler->display->display_options['fields']['field_person_website']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_person_website']['click_sort_column'] = 'url';
-  /* Field: Content: CV */
+  /* Field: Content: Résumé/Curriculum Vitae */
   $handler->display->display_options['fields']['field_person_cv']['id'] = 'field_person_cv';
   $handler->display->display_options['fields']['field_person_cv']['table'] = 'field_data_field_person_cv';
   $handler->display->display_options['fields']['field_person_cv']['field'] = 'field_person_cv';

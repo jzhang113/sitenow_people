@@ -274,7 +274,7 @@ function sitenow_people_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'people',
       'deleted' => '0',
-      'description' => '',
+      'description' => 'A résumé or curriculum vitae file. Will appear as a link on the person\'s page.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -298,7 +298,7 @@ function sitenow_people_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_person_cv',
-      'label' => 'CV',
+      'label' => 'Résumé/Curriculum Vitae',
       'required' => 0,
       'settings' => array(
         'description_field' => 0,
@@ -339,7 +339,7 @@ function sitenow_people_field_default_fields() {
       'bundle' => 'people',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Valid email address for this person. Will be automatically formatted as a mail-to link.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -521,7 +521,7 @@ function sitenow_people_field_default_fields() {
       'bundle' => 'people',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'The campus address or office number of this person.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -585,7 +585,7 @@ function sitenow_people_field_default_fields() {
       'bundle' => 'people',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Will be automatically formatted as (555) 555-5555. Letters and illegal characters will be stripped.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -662,7 +662,7 @@ function sitenow_people_field_default_fields() {
       'bundle' => 'people',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'An optional position field, e.g. Associate Professor.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -742,7 +742,7 @@ function sitenow_people_field_default_fields() {
       'bundle' => 'people',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'This a reference to the <a href="/admin/structure/taxonomy/person_type">person type taxonomy</a>. You can add terms to that vocabulary and they will appear as checkboxes. This allows you to group people by classifications such as faculty, staff or student. Only webmasters have permission to edit taxonomies. ',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -815,7 +815,7 @@ function sitenow_people_field_default_fields() {
       'bundle' => 'people',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Valid URL to a website. Will be automatically formatted as a link.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -853,6 +853,7 @@ function sitenow_people_field_default_fields() {
           'url_cutoff' => '80',
         ),
         'enable_tokens' => 1,
+        'rel_remove' => 'default',
         'title' => 'none',
         'title_maxlength' => '128',
         'title_value' => '',
@@ -872,8 +873,9 @@ function sitenow_people_field_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('A résumé or curriculum vitae file. Will appear as a link on the person\'s page.');
+  t('An optional position field, e.g. Associate Professor.');
   t('Bio');
-  t('CV');
   t('Email');
   t('First Name');
   t('Last Name');
@@ -882,7 +884,13 @@ function sitenow_people_field_default_fields() {
   t('Phone');
   t('Photo');
   t('Position');
+  t('Résumé/Curriculum Vitae');
+  t('The campus address or office number of this person.');
+  t('This a reference to the <a href="/admin/structure/taxonomy/person_type">person type taxonomy</a>. You can add terms to that vocabulary and they will appear as checkboxes. This allows you to group people by classifications such as faculty, staff or student. Only webmasters have permission to edit taxonomies. ');
+  t('Valid URL to a website. Will be automatically formatted as a link.');
+  t('Valid email address for this person. Will be automatically formatted as a mail-to link.');
   t('Website');
+  t('Will be automatically formatted as (555) 555-5555. Letters and illegal characters will be stripped.');
 
   return $fields;
 }
