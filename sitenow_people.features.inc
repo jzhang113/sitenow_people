@@ -83,10 +83,10 @@ function sitenow_people_node_info() {
     'people' => array(
       'name' => t('Person'),
       'base' => 'node_content',
-      'description' => t('Used to create a directory of faculty/staff/students on your site. This is <strong>not</strong> used to give users access to your site.'),
+      'description' => t('Use the <em>person</em> content type to create a directory of faculty, staff, and students on your site. This is <strong>not</strong> used to give users access to your site.'),
       'has_title' => '1',
       'title_label' => t('Title'),
-      'help' => '',
+      'help' => t('The title will be constructed from the first name and last name fields, e.g. Jane Doe. A middle name or initial can be used after the first name. The photo field will be used as a thumbnail on the <a href="/people">people page</a>. See the <a href="/admin/apps/sitenow/sitenow_people/configure">demo content</a> for an example.'),
     ),
   );
   return $items;
