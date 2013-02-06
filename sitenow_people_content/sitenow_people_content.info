@@ -6,4 +6,5 @@ php = 5.2.4
 version = 7.x-1.1
 project = sitenow_people_content
 dependencies[] = sitenow_people
+dependencies[] = migrate
 files[] = sitenow_people_content.migrate.inc

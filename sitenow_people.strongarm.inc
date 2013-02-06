@@ -14,7 +14,7 @@ function sitenow_people_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_people';
-  $strongarm->value = 'edit-submission';
+  $strongarm->value = 'edit-xmlsitemap';
   $export['additional_settings__active_tab_people'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -141,6 +141,16 @@ function sitenow_people_strongarm() {
   $strongarm->name = 'save_continue_people';
   $strongarm->value = 'Save and add fields';
   $export['save_continue_people'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_node_people';
+  $strongarm->value = array(
+    'status' => '1',
+    'priority' => '0.5',
+  );
+  $export['xmlsitemap_settings_node_people'] = $strongarm;
 
   return $export;
 }
