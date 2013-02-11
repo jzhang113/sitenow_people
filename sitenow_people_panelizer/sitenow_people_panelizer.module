@@ -1,13 +1,23 @@
 <?php
 /**
  * @file
- * sitenow_people.panelizer.inc
+ * Code for the SiteNow Core Panelizer Defaults.
  */
+
+/**
+ * Implements hook_ctools_plugin_api().
+ */
+function sitenow_people_panelizer_ctools_plugin_api() {
+  list($module, $api) = func_get_args();
+  if ($module == "panelizer" && $api == "panelizer") {
+    return array("version" => "1");
+  }
+}
 
 /**
  * Implements hook_panelizer_defaults().
  */
-function sitenow_people_panelizer_defaults() {
+function sitenow_people_panelizer_panelizer_defaults() {
   $export = array();
 
   $panelizer = new stdClass();
