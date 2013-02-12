@@ -162,6 +162,7 @@ function sitenow_people_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  $handler->display->display_options['pane_title'] = 'Table View of People';
   $handler->display->display_options['pane_description'] = 'Table layout of people';
   $handler->display->display_options['pane_category']['name'] = 'People';
   $handler->display->display_options['pane_category']['weight'] = '0';
@@ -220,6 +221,7 @@ function sitenow_people_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  $handler->display->display_options['pane_title'] = 'Grid View of People';
   $handler->display->display_options['pane_description'] = 'Grid layout of people';
   $handler->display->display_options['pane_category']['name'] = 'People';
   $handler->display->display_options['pane_category']['weight'] = '0';
@@ -324,6 +326,7 @@ function sitenow_people_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  $handler->display->display_options['pane_title'] = 'Sidebar List of People';
   $handler->display->display_options['pane_description'] = 'List of People';
   $handler->display->display_options['pane_category']['name'] = 'People';
   $handler->display->display_options['pane_category']['weight'] = '0';
