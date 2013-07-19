@@ -2,6 +2,7 @@
   width:25%;
   float:left;
   padding:10px;
+  min-height: 330px;
 }
 .view-display-id-panel_pane_people_grid .views-field-title, .view-display-id-panel_pane_people_grid .views-field-field-person-position { text-align:center; }
 .page-type-people .field-name-field-person-image {
