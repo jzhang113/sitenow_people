@@ -41,14 +41,14 @@ function sitenow_people_image_default_styles() {
         'module' => 'manualcrop',
         'name' => 'manualcrop_crop_and_scale',
         'data' => array(
-          'width' => '220',
-          'height' => '220',
+          'width' => 220,
+          'height' => 220,
           'upscale' => 1,
           'respectminimum' => 1,
           'onlyscaleifcrop' => 0,
           'style_name' => 'person_large',
         ),
-        'weight' => '0',
+        'weight' => 0,
       ),
       2 => array(
         'label' => 'Scale and crop',
@@ -60,10 +60,10 @@ function sitenow_people_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => '220',
-          'height' => '220',
+          'width' => 220,
+          'height' => 220,
         ),
-        'weight' => '2',
+        'weight' => 2,
       ),
     ),
   );

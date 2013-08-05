@@ -13,9 +13,9 @@ function sitenow_people_taxonomy_default_vocabularies() {
       'name' => 'Person Type',
       'machine_name' => 'person_type',
       'description' => '',
-      'hierarchy' => '0',
+      'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => '0',
+      'weight' => 0,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
