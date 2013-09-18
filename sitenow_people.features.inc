@@ -28,6 +28,7 @@ function sitenow_people_image_default_styles() {
 
   // Exported image style: person_large.
   $styles['person_large'] = array(
+    'label' => 'person_large',
     'name' => 'person_large',
     'effects' => array(
       1 => array(
