@@ -107,6 +107,12 @@ function sitenow_people_views_default_views() {
   $handler->display->display_options['fields']['field_person_position']['table'] = 'field_data_field_person_position';
   $handler->display->display_options['fields']['field_person_position']['field'] = 'field_person_position';
   $handler->display->display_options['fields']['field_person_position']['element_label_colon'] = FALSE;
+  /* Field: Content: Department */
+  $handler->display->display_options['fields']['field_person_department']['id'] = 'field_person_department';
+  $handler->display->display_options['fields']['field_person_department']['table'] = 'field_data_field_person_department';
+  $handler->display->display_options['fields']['field_person_department']['field'] = 'field_person_department';
+  $handler->display->display_options['fields']['field_person_department']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_person_department']['delta_offset'] = '0';
   /* Field: Content: Person Type */
   $handler->display->display_options['fields']['field_person_type']['id'] = 'field_person_type';
   $handler->display->display_options['fields']['field_person_type']['table'] = 'field_data_field_person_type';
@@ -209,6 +215,14 @@ function sitenow_people_views_default_views() {
   $handler->display->display_options['fields']['field_person_position']['field'] = 'field_person_position';
   $handler->display->display_options['fields']['field_person_position']['label'] = '';
   $handler->display->display_options['fields']['field_person_position']['element_label_colon'] = FALSE;
+  /* Field: Content: Department */
+  $handler->display->display_options['fields']['field_person_department']['id'] = 'field_person_department';
+  $handler->display->display_options['fields']['field_person_department']['table'] = 'field_data_field_person_department';
+  $handler->display->display_options['fields']['field_person_department']['field'] = 'field_person_department';
+  $handler->display->display_options['fields']['field_person_department']['label'] = '';
+  $handler->display->display_options['fields']['field_person_department']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_person_department']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_person_department']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Draggableviews: Weight */
   $handler->display->display_options['sorts']['weight']['id'] = 'weight';
@@ -286,6 +300,14 @@ function sitenow_people_views_default_views() {
   $handler->display->display_options['fields']['field_person_position']['field'] = 'field_person_position';
   $handler->display->display_options['fields']['field_person_position']['label'] = '';
   $handler->display->display_options['fields']['field_person_position']['element_label_colon'] = FALSE;
+  /* Field: Content: Department */
+  $handler->display->display_options['fields']['field_person_department']['id'] = 'field_person_department';
+  $handler->display->display_options['fields']['field_person_department']['table'] = 'field_data_field_person_department';
+  $handler->display->display_options['fields']['field_person_department']['field'] = 'field_person_department';
+  $handler->display->display_options['fields']['field_person_department']['label'] = '';
+  $handler->display->display_options['fields']['field_person_department']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_person_department']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_person_department']['delta_offset'] = '0';
   /* Field: Content: Email */
   $handler->display->display_options['fields']['field_person_email']['id'] = 'field_person_email';
   $handler->display->display_options['fields']['field_person_email']['table'] = 'field_data_field_person_email';

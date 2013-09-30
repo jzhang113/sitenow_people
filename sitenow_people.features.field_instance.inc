@@ -57,7 +57,7 @@ function sitenow_people_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -164,7 +164,7 @@ function sitenow_people_field_default_field_instances() {
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_default',
-        'weight' => 10,
+        'weight' => 11,
       ),
       'ical' => array(
         'label' => 'above',
@@ -197,7 +197,44 @@ function sitenow_people_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 11,
+      'weight' => 12,
+    ),
+  );
+
+  // Exported field_instance: 'node-people-field_person_department'
+  $field_instances['node-people-field_person_department'] = array(
+    'bundle' => 'people',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'This a reference to the <a href="/admin/structure/taxonomy/sitenow_people_department">department taxonomy</a>. You can add terms to that vocabulary and they will appear as checkboxes. This allows you to group people by departments. Only webmasters have permission to edit taxonomies. ',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 5,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_person_department',
+    'label' => 'Department',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 5,
     ),
   );
 
@@ -213,7 +250,7 @@ function sitenow_people_field_default_field_instances() {
         'module' => 'email',
         'settings' => array(),
         'type' => 'email_default',
-        'weight' => 8,
+        'weight' => 9,
       ),
       'ical' => array(
         'label' => 'above',
@@ -242,7 +279,7 @@ function sitenow_people_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'email_textfield',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -338,7 +375,7 @@ function sitenow_people_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 9,
+        'weight' => 10,
       ),
       'ical' => array(
         'label' => 'above',
@@ -368,7 +405,7 @@ function sitenow_people_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -384,7 +421,7 @@ function sitenow_people_field_default_field_instances() {
         'module' => 'phone',
         'settings' => array(),
         'type' => 'phone',
-        'weight' => 6,
+        'weight' => 7,
       ),
       'ical' => array(
         'label' => 'above',
@@ -416,7 +453,7 @@ function sitenow_people_field_default_field_instances() {
       'module' => 'phone',
       'settings' => array(),
       'type' => 'phone_textfield',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -478,7 +515,7 @@ function sitenow_people_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'ical' => array(
         'label' => 'above',
@@ -505,7 +542,7 @@ function sitenow_people_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -521,7 +558,7 @@ function sitenow_people_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 7,
+        'weight' => 8,
       ),
       'ical' => array(
         'label' => 'above',
@@ -565,7 +602,7 @@ function sitenow_people_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -574,6 +611,7 @@ function sitenow_people_field_default_field_instances() {
   t('A résumé or curriculum vitae file. Will appear as a link on the person\'s page.');
   t('An optional position field, e.g. Associate Professor.');
   t('Bio');
+  t('Department');
   t('Email');
   t('First Name');
   t('Last Name');
@@ -585,6 +623,7 @@ function sitenow_people_field_default_field_instances() {
   t('Résumé/Curriculum Vitae');
   t('The campus address or office number of this person.');
   t('This a reference to the <a href="/admin/structure/taxonomy/person_type">person type taxonomy</a>. You can add terms to that vocabulary and they will appear as checkboxes. This allows you to group people by classifications such as faculty, staff or student. Only webmasters have permission to edit taxonomies. ');
+  t('This a reference to the <a href="/admin/structure/taxonomy/sitenow_people_department">department taxonomy</a>. You can add terms to that vocabulary and they will appear as checkboxes. This allows you to group people by departments. Only webmasters have permission to edit taxonomies. ');
   t('Valid URL to a website. Will be automatically formatted as a link.');
   t('Valid email address for this person. Will be automatically formatted as a mail-to link.');
   t('Website');

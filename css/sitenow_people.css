@@ -4,7 +4,11 @@
   padding:10px;
   min-height: 330px;
 }
-.view-display-id-panel_pane_people_grid .views-field-title, .view-display-id-panel_pane_people_grid .views-field-field-person-position { text-align:center; }
+.view-display-id-panel_pane_people_grid .views-field-title, 
+.view-display-id-panel_pane_people_grid .views-field-field-person-position,
+.view-display-id-panel_pane_people_grid .views-field-field-person-department { 
+  text-align:center; 
+}
 .page-type-people .field-name-field-person-image {
   float:none;
   clear:none;
@@ -19,4 +23,7 @@
 .page-type-people .pane-node-title {
   font-weight:bold;
   font-size:3em;
+}
+.node-type-people .field-type-taxonomy-term-reference {
+  margin-bottom: 0;
 }
