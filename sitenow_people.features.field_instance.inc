@@ -414,13 +414,13 @@ function sitenow_people_field_default_field_instances() {
     'bundle' => 'people',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Will be automatically formatted as (555) 555-5555. Letters and illegal characters will be stripped.',
+    'description' => 'Enter the phone number as it should be displayed. Example: (555) 555-5555.',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'phone',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'phone',
+        'type' => 'text_plain',
         'weight' => 7,
       ),
       'ical' => array(
@@ -440,19 +440,14 @@ function sitenow_people_field_default_field_instances() {
     'field_name' => 'field_person_phone',
     'label' => 'Phone',
     'required' => 0,
-    'settings' => array(
-      'ca_phone_parentheses' => 1,
-      'ca_phone_separator' => '-',
-      'phone_country_code' => 0,
-      'phone_default_country_code' => 1,
-      'phone_int_max_length' => 15,
-      'user_register_form' => FALSE,
-    ),
+    'settings' => array(),
     'widget' => array(
       'active' => 0,
-      'module' => 'phone',
-      'settings' => array(),
-      'type' => 'phone_textfield',
+      'module' => 'telephone',
+      'settings' => array(
+        'placeholder' => '',
+      ),
+      'type' => 'telephone_default',
       'weight' => 8,
     ),
   );
@@ -613,6 +608,7 @@ function sitenow_people_field_default_field_instances() {
   t('Bio');
   t('Department');
   t('Email');
+  t('Enter the phone number as it should be displayed. Example: (555) 555-5555.');
   t('First Name');
   t('Last Name');
   t('Office');
@@ -627,7 +623,6 @@ function sitenow_people_field_default_field_instances() {
   t('Valid URL to a website. Will be automatically formatted as a link.');
   t('Valid email address for this person. Will be automatically formatted as a mail-to link.');
   t('Website');
-  t('Will be automatically formatted as (555) 555-5555. Letters and illegal characters will be stripped.');
 
   return $field_instances;
 }

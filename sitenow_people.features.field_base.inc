@@ -216,12 +216,10 @@ function sitenow_people_field_default_field_bases() {
     'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
-    'module' => 'phone',
-    'settings' => array(
-      'country' => 'ca',
-    ),
+    'module' => 'telephone',
+    'settings' => array(),
     'translatable' => 0,
-    'type' => 'phone',
+    'type' => 'telephone',
   );
 
   // Exported field_base: 'field_person_position'
