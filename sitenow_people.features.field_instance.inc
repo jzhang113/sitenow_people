@@ -440,7 +440,9 @@ function sitenow_people_field_default_field_instances() {
     'field_name' => 'field_person_phone',
     'label' => 'Phone',
     'required' => 0,
-    'settings' => array(),
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
     'widget' => array(
       'active' => 0,
       'module' => 'telephone',
