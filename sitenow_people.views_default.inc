@@ -120,13 +120,22 @@ function sitenow_people_views_default_views() {
   $handler->display->display_options['fields']['field_person_type']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_person_type']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_person_type']['delta_offset'] = '0';
-  /* Field: Content: Body */
+  /* Field: Content: Bio */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
   $handler->display->display_options['fields']['body']['settings'] = array(
+    'trim_length' => '100',
+  );
+  /* Field: Content: Bio */
+  $handler->display->display_options['fields']['field_person_bio']['id'] = 'field_person_bio';
+  $handler->display->display_options['fields']['field_person_bio']['table'] = 'field_data_field_person_bio';
+  $handler->display->display_options['fields']['field_person_bio']['field'] = 'field_person_bio';
+  $handler->display->display_options['fields']['field_person_bio']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_person_bio']['type'] = 'text_summary_or_trimmed';
+  $handler->display->display_options['fields']['field_person_bio']['settings'] = array(
     'trim_length' => '100',
   );
   /* Field: Content: Email */
@@ -326,7 +335,7 @@ function sitenow_people_views_default_views() {
   $handler->display->display_options['fields']['field_person_office']['field'] = 'field_person_office';
   $handler->display->display_options['fields']['field_person_office']['label'] = '';
   $handler->display->display_options['fields']['field_person_office']['element_label_colon'] = FALSE;
-  /* Field: Content: Body */
+  /* Field: Content: Bio */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -334,6 +343,16 @@ function sitenow_people_views_default_views() {
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
   $handler->display->display_options['fields']['body']['settings'] = array(
+    'trim_length' => '200',
+  );
+  /* Field: Content: Bio */
+  $handler->display->display_options['fields']['field_person_bio']['id'] = 'field_person_bio';
+  $handler->display->display_options['fields']['field_person_bio']['table'] = 'field_data_field_person_bio';
+  $handler->display->display_options['fields']['field_person_bio']['field'] = 'field_person_bio';
+  $handler->display->display_options['fields']['field_person_bio']['label'] = '';
+  $handler->display->display_options['fields']['field_person_bio']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_person_bio']['type'] = 'text_summary_or_trimmed';
+  $handler->display->display_options['fields']['field_person_bio']['settings'] = array(
     'trim_length' => '200',
   );
   $handler->display->display_options['defaults']['sorts'] = FALSE;

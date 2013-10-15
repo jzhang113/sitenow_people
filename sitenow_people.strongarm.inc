@@ -59,10 +59,10 @@ function sitenow_people_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '13',
+          'weight' => '14',
         ),
         'xmlsitemap' => array(
-          'weight' => '14',
+          'weight' => '15',
         ),
       ),
       'display' => array(),

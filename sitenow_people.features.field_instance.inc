@@ -73,7 +73,7 @@ function sitenow_people_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'ical' => array(
         'label' => 'above',
@@ -85,7 +85,7 @@ function sitenow_people_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 12,
       ),
     ),
     'entity_type' => 'node',
@@ -119,7 +119,7 @@ function sitenow_people_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'ical' => array(
         'label' => 'above',
@@ -131,7 +131,7 @@ function sitenow_people_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 8,
       ),
     ),
     'entity_type' => 'node',
@@ -153,6 +153,51 @@ function sitenow_people_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-people-field_person_bio'
+  $field_instances['node-people-field_person_bio'] = array(
+    'bundle' => 'people',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'trim_length' => 600,
+        ),
+        'type' => 'text_summary_or_trimmed',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_person_bio',
+    'label' => 'Bio',
+    'required' => 0,
+    'settings' => array(
+      'display_summary' => 1,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 20,
+        'summary_rows' => 5,
+      ),
+      'type' => 'text_textarea_with_summary',
+      'weight' => 8,
+    ),
+  );
+
   // Exported field_instance: 'node-people-field_person_cv'
   $field_instances['node-people-field_person_cv'] = array(
     'bundle' => 'people',
@@ -164,7 +209,7 @@ function sitenow_people_field_default_field_instances() {
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_default',
-        'weight' => 11,
+        'weight' => 12,
       ),
       'ical' => array(
         'label' => 'above',
@@ -176,7 +221,7 @@ function sitenow_people_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 9,
       ),
     ),
     'entity_type' => 'node',
@@ -197,7 +242,7 @@ function sitenow_people_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
@@ -213,13 +258,13 @@ function sitenow_people_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 10,
       ),
     ),
     'entity_type' => 'node',
@@ -250,7 +295,7 @@ function sitenow_people_field_default_field_instances() {
         'module' => 'email',
         'settings' => array(),
         'type' => 'email_default',
-        'weight' => 9,
+        'weight' => 10,
       ),
       'ical' => array(
         'label' => 'above',
@@ -262,7 +307,7 @@ function sitenow_people_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 11,
       ),
     ),
     'entity_type' => 'node',
@@ -279,7 +324,7 @@ function sitenow_people_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'email_textfield',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -298,7 +343,7 @@ function sitenow_people_field_default_field_instances() {
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'ical' => array(
         'label' => 'above',
@@ -310,7 +355,7 @@ function sitenow_people_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 7,
       ),
     ),
     'entity_type' => 'node',
@@ -375,7 +420,7 @@ function sitenow_people_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 10,
+        'weight' => 11,
       ),
       'ical' => array(
         'label' => 'above',
@@ -387,7 +432,7 @@ function sitenow_people_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 6,
       ),
     ),
     'entity_type' => 'node',
@@ -405,7 +450,7 @@ function sitenow_people_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -421,7 +466,7 @@ function sitenow_people_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_plain',
-        'weight' => 7,
+        'weight' => 8,
       ),
       'ical' => array(
         'label' => 'above',
@@ -433,7 +478,7 @@ function sitenow_people_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'node',
@@ -450,7 +495,7 @@ function sitenow_people_field_default_field_instances() {
         'placeholder' => '',
       ),
       'type' => 'telephone_default',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -466,7 +511,7 @@ function sitenow_people_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 5,
       ),
       'ical' => array(
         'label' => 'above',
@@ -478,7 +523,7 @@ function sitenow_people_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'node',
@@ -512,7 +557,7 @@ function sitenow_people_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 6,
+        'weight' => 7,
       ),
       'ical' => array(
         'label' => 'above',
@@ -524,7 +569,7 @@ function sitenow_people_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 4,
       ),
     ),
     'entity_type' => 'node',
@@ -555,7 +600,7 @@ function sitenow_people_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 8,
+        'weight' => 9,
       ),
       'ical' => array(
         'label' => 'above',
@@ -567,7 +612,7 @@ function sitenow_people_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 5,
       ),
     ),
     'entity_type' => 'node',
@@ -599,7 +644,7 @@ function sitenow_people_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
