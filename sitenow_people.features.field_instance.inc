@@ -334,8 +334,8 @@ function sitenow_people_field_default_field_instances() {
         'manualcrop_instant_preview' => 1,
         'manualcrop_require_cropping' => array(
           'featured_slider' => 0,
-          'person_large' => 'person_large',
-          'person_small__100x100' => 'person_small__100x100',
+          'person_large' => 0,
+          'person_small__100x100' => 0,
         ),
         'manualcrop_styles_list' => array(
           'featured_slider' => 0,
