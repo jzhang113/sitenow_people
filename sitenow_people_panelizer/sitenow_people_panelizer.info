@@ -1,7 +1,0 @@
-name = SiteNow People Panelizer
-description = People panelizer defaults for SiteNow Standard Service
-core = 7.x
-package = SiteNow
-php = 5.2.4
-version = 7.x-1.0
-project = sitenow_people_panelizer

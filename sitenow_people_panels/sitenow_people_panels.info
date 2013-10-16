@@ -1,7 +1,0 @@
-name = SiteNow People Panels
-description = People panel page for SiteNow Standard Service
-core = 7.x
-package = SiteNow
-php = 5.2.4
-version = 7.x-1.0-dev1
-project = sitenow_people_panels

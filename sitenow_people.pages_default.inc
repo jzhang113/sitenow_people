@@ -1,23 +1,13 @@
 <?php
 /**
  * @file
- * Code for the SiteNow Core Panels.
+ * sitenow_people.pages_default.inc
  */
-
-/**
- * Implements hook_ctools_plugin_api().
- */
-function sitenow_people_panels_ctools_plugin_api() {
-  list($module, $api) = func_get_args();
-  if ($module == "page_manager" && $api == "pages_default") {
-    return array("version" => "1");
-  }
-}
 
 /**
  * Implements hook_default_page_manager_pages().
  */
-function sitenow_people_panels_default_page_manager_pages() {
+function sitenow_people_default_page_manager_pages() {
   $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
@@ -80,6 +70,41 @@ function sitenow_people_panels_default_page_manager_pages() {
     $pane->pid = 'new-1';
     $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
+    $pane->subtype = 'people-panel_pane_people_table';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'use_pager' => 1,
+      'pager_id' => '0',
+      'items_per_page' => '20',
+      'fields_override' => array(
+        'field_person_image' => 1,
+        'title' => 1,
+        'field_person_position' => 1,
+        'field_person_department' => 1,
+        'field_person_type' => 1,
+        'body' => 1,
+        'field_person_email' => 1,
+        'field_person_office' => 1,
+        'field_person_phone' => 1,
+        'field_person_website' => 1,
+        'field_person_cv' => 1,
+      ),
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array();
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-1'] = $pane;
+    $display->panels['contentmain'][0] = 'new-1';
+    $pane = new stdClass();
+    $pane->pid = 'new-2';
+    $pane->panel = 'contentmain';
+    $pane->type = 'views_panes';
     $pane->subtype = 'people-panel_pane_people_grid';
     $pane->shown = TRUE;
     $pane->access = array();
@@ -96,10 +121,10 @@ function sitenow_people_panels_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
-    $display->content['new-1'] = $pane;
-    $display->panels['contentmain'][0] = 'new-1';
+    $display->content['new-2'] = $pane;
+    $display->panels['contentmain'][1] = 'new-2';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
