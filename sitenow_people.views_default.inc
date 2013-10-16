@@ -85,77 +85,66 @@ function sitenow_people_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Photo */
+  /* Field: Photo (small 100x100) */
   $handler->display->display_options['fields']['field_person_image']['id'] = 'field_person_image';
   $handler->display->display_options['fields']['field_person_image']['table'] = 'field_data_field_person_image';
   $handler->display->display_options['fields']['field_person_image']['field'] = 'field_person_image';
+  $handler->display->display_options['fields']['field_person_image']['ui_name'] = 'Photo (small 100x100)';
+  $handler->display->display_options['fields']['field_person_image']['label'] = '';
   $handler->display->display_options['fields']['field_person_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_person_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_person_image']['settings'] = array(
     'image_style' => 'person_small__100x100',
     'image_link' => '',
   );
-  /* Field: Content: Title */
+  /* Field: Name */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['ui_name'] = 'Name';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Position */
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Position */
   $handler->display->display_options['fields']['field_person_position']['id'] = 'field_person_position';
   $handler->display->display_options['fields']['field_person_position']['table'] = 'field_data_field_person_position';
   $handler->display->display_options['fields']['field_person_position']['field'] = 'field_person_position';
+  $handler->display->display_options['fields']['field_person_position']['ui_name'] = 'Position';
   $handler->display->display_options['fields']['field_person_position']['element_label_colon'] = FALSE;
-  /* Field: Content: Department */
+  /* Field: Department */
   $handler->display->display_options['fields']['field_person_department']['id'] = 'field_person_department';
   $handler->display->display_options['fields']['field_person_department']['table'] = 'field_data_field_person_department';
   $handler->display->display_options['fields']['field_person_department']['field'] = 'field_person_department';
+  $handler->display->display_options['fields']['field_person_department']['ui_name'] = 'Department';
   $handler->display->display_options['fields']['field_person_department']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_person_department']['delta_offset'] = '0';
-  /* Field: Content: Person Type */
+  /* Field: Person Type */
   $handler->display->display_options['fields']['field_person_type']['id'] = 'field_person_type';
   $handler->display->display_options['fields']['field_person_type']['table'] = 'field_data_field_person_type';
   $handler->display->display_options['fields']['field_person_type']['field'] = 'field_person_type';
+  $handler->display->display_options['fields']['field_person_type']['ui_name'] = 'Person Type';
   $handler->display->display_options['fields']['field_person_type']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_person_type']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_person_type']['delta_offset'] = '0';
-  /* Field: Content: Bio */
-  $handler->display->display_options['fields']['field_person_bio']['id'] = 'field_person_bio';
-  $handler->display->display_options['fields']['field_person_bio']['table'] = 'field_data_field_person_bio';
-  $handler->display->display_options['fields']['field_person_bio']['field'] = 'field_person_bio';
-  $handler->display->display_options['fields']['field_person_bio']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_person_bio']['type'] = 'text_summary_or_trimmed';
-  $handler->display->display_options['fields']['field_person_bio']['settings'] = array(
-    'trim_length' => '100',
-  );
-  /* Field: Content: Email */
+  /* Field: Email */
   $handler->display->display_options['fields']['field_person_email']['id'] = 'field_person_email';
   $handler->display->display_options['fields']['field_person_email']['table'] = 'field_data_field_person_email';
   $handler->display->display_options['fields']['field_person_email']['field'] = 'field_person_email';
+  $handler->display->display_options['fields']['field_person_email']['ui_name'] = 'Email';
   $handler->display->display_options['fields']['field_person_email']['element_label_colon'] = FALSE;
-  /* Field: Content: Office */
+  /* Field: Office */
   $handler->display->display_options['fields']['field_person_office']['id'] = 'field_person_office';
   $handler->display->display_options['fields']['field_person_office']['table'] = 'field_data_field_person_office';
   $handler->display->display_options['fields']['field_person_office']['field'] = 'field_person_office';
+  $handler->display->display_options['fields']['field_person_office']['ui_name'] = 'Office';
   $handler->display->display_options['fields']['field_person_office']['element_label_colon'] = FALSE;
-  /* Field: Content: Phone */
+  /* Field: Phone */
   $handler->display->display_options['fields']['field_person_phone']['id'] = 'field_person_phone';
   $handler->display->display_options['fields']['field_person_phone']['table'] = 'field_data_field_person_phone';
   $handler->display->display_options['fields']['field_person_phone']['field'] = 'field_person_phone';
+  $handler->display->display_options['fields']['field_person_phone']['ui_name'] = 'Phone';
   $handler->display->display_options['fields']['field_person_phone']['element_label_colon'] = FALSE;
-  /* Field: Content: Website */
-  $handler->display->display_options['fields']['field_person_website']['id'] = 'field_person_website';
-  $handler->display->display_options['fields']['field_person_website']['table'] = 'field_data_field_person_website';
-  $handler->display->display_options['fields']['field_person_website']['field'] = 'field_person_website';
-  $handler->display->display_options['fields']['field_person_website']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_person_website']['click_sort_column'] = 'url';
-  /* Field: Content: Résumé/Curriculum Vitae */
-  $handler->display->display_options['fields']['field_person_cv']['id'] = 'field_person_cv';
-  $handler->display->display_options['fields']['field_person_cv']['table'] = 'field_data_field_person_cv';
-  $handler->display->display_options['fields']['field_person_cv']['field'] = 'field_person_cv';
-  $handler->display->display_options['fields']['field_person_cv']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_person_cv']['click_sort_column'] = 'fid';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Draggableviews: Weight */
   $handler->display->display_options['sorts']['weight']['id'] = 'weight';
@@ -191,10 +180,11 @@ function sitenow_people_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Photo */
+  /* Field: Photo (large 220x220) */
   $handler->display->display_options['fields']['field_person_image']['id'] = 'field_person_image';
   $handler->display->display_options['fields']['field_person_image']['table'] = 'field_data_field_person_image';
   $handler->display->display_options['fields']['field_person_image']['field'] = 'field_person_image';
+  $handler->display->display_options['fields']['field_person_image']['ui_name'] = 'Photo (large 220x220)';
   $handler->display->display_options['fields']['field_person_image']['label'] = '';
   $handler->display->display_options['fields']['field_person_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_person_image']['click_sort_column'] = 'fid';
@@ -202,23 +192,27 @@ function sitenow_people_views_default_views() {
     'image_style' => 'person_large',
     'image_link' => '',
   );
-  /* Field: Content: Title */
+  /* Field: Name */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['ui_name'] = 'Name';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Position */
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Position */
   $handler->display->display_options['fields']['field_person_position']['id'] = 'field_person_position';
   $handler->display->display_options['fields']['field_person_position']['table'] = 'field_data_field_person_position';
   $handler->display->display_options['fields']['field_person_position']['field'] = 'field_person_position';
+  $handler->display->display_options['fields']['field_person_position']['ui_name'] = 'Position';
   $handler->display->display_options['fields']['field_person_position']['label'] = '';
   $handler->display->display_options['fields']['field_person_position']['element_label_colon'] = FALSE;
-  /* Field: Content: Department */
+  /* Field: Department */
   $handler->display->display_options['fields']['field_person_department']['id'] = 'field_person_department';
   $handler->display->display_options['fields']['field_person_department']['table'] = 'field_data_field_person_department';
   $handler->display->display_options['fields']['field_person_department']['field'] = 'field_person_department';
+  $handler->display->display_options['fields']['field_person_department']['ui_name'] = 'Department';
   $handler->display->display_options['fields']['field_person_department']['label'] = '';
   $handler->display->display_options['fields']['field_person_department']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_person_department']['type'] = 'taxonomy_term_reference_plain';
@@ -262,80 +256,52 @@ function sitenow_people_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Person photo (large 220x220) */
-  $handler->display->display_options['fields']['field_person_image_1']['id'] = 'field_person_image_1';
-  $handler->display->display_options['fields']['field_person_image_1']['table'] = 'field_data_field_person_image';
-  $handler->display->display_options['fields']['field_person_image_1']['field'] = 'field_person_image';
-  $handler->display->display_options['fields']['field_person_image_1']['ui_name'] = 'Person photo (large 220x220)';
-  $handler->display->display_options['fields']['field_person_image_1']['label'] = '';
-  $handler->display->display_options['fields']['field_person_image_1']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_person_image_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_person_image_1']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_person_image_1']['settings'] = array(
-    'image_style' => 'person_large',
-    'image_link' => '',
-  );
-  /* Field: Person photo (small 100x100) */
-  $handler->display->display_options['fields']['field_person_image']['id'] = 'field_person_image';
-  $handler->display->display_options['fields']['field_person_image']['table'] = 'field_data_field_person_image';
-  $handler->display->display_options['fields']['field_person_image']['field'] = 'field_person_image';
-  $handler->display->display_options['fields']['field_person_image']['ui_name'] = 'Person photo (small 100x100)';
-  $handler->display->display_options['fields']['field_person_image']['label'] = '';
-  $handler->display->display_options['fields']['field_person_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_person_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_person_image']['settings'] = array(
-    'image_style' => 'person_small__100x100',
-    'image_link' => '',
-  );
-  /* Field: Content: Title */
+  /* Field: Name */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['ui_name'] = 'Name';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Position */
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Position */
   $handler->display->display_options['fields']['field_person_position']['id'] = 'field_person_position';
   $handler->display->display_options['fields']['field_person_position']['table'] = 'field_data_field_person_position';
   $handler->display->display_options['fields']['field_person_position']['field'] = 'field_person_position';
+  $handler->display->display_options['fields']['field_person_position']['ui_name'] = 'Position';
   $handler->display->display_options['fields']['field_person_position']['label'] = '';
   $handler->display->display_options['fields']['field_person_position']['element_label_colon'] = FALSE;
-  /* Field: Content: Department */
+  /* Field: Department */
   $handler->display->display_options['fields']['field_person_department']['id'] = 'field_person_department';
   $handler->display->display_options['fields']['field_person_department']['table'] = 'field_data_field_person_department';
   $handler->display->display_options['fields']['field_person_department']['field'] = 'field_person_department';
+  $handler->display->display_options['fields']['field_person_department']['ui_name'] = 'Department';
   $handler->display->display_options['fields']['field_person_department']['label'] = '';
   $handler->display->display_options['fields']['field_person_department']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_person_department']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_person_department']['delta_offset'] = '0';
-  /* Field: Content: Email */
+  /* Field: Email */
   $handler->display->display_options['fields']['field_person_email']['id'] = 'field_person_email';
   $handler->display->display_options['fields']['field_person_email']['table'] = 'field_data_field_person_email';
   $handler->display->display_options['fields']['field_person_email']['field'] = 'field_person_email';
+  $handler->display->display_options['fields']['field_person_email']['ui_name'] = 'Email';
   $handler->display->display_options['fields']['field_person_email']['label'] = '';
   $handler->display->display_options['fields']['field_person_email']['element_label_colon'] = FALSE;
-  /* Field: Content: Phone */
+  /* Field: Phone */
   $handler->display->display_options['fields']['field_person_phone']['id'] = 'field_person_phone';
   $handler->display->display_options['fields']['field_person_phone']['table'] = 'field_data_field_person_phone';
   $handler->display->display_options['fields']['field_person_phone']['field'] = 'field_person_phone';
+  $handler->display->display_options['fields']['field_person_phone']['ui_name'] = 'Phone';
   $handler->display->display_options['fields']['field_person_phone']['label'] = '';
   $handler->display->display_options['fields']['field_person_phone']['element_label_colon'] = FALSE;
-  /* Field: Content: Office */
+  /* Field: Office */
   $handler->display->display_options['fields']['field_person_office']['id'] = 'field_person_office';
   $handler->display->display_options['fields']['field_person_office']['table'] = 'field_data_field_person_office';
   $handler->display->display_options['fields']['field_person_office']['field'] = 'field_person_office';
+  $handler->display->display_options['fields']['field_person_office']['ui_name'] = 'Office';
   $handler->display->display_options['fields']['field_person_office']['label'] = '';
   $handler->display->display_options['fields']['field_person_office']['element_label_colon'] = FALSE;
-  /* Field: Content: Bio */
-  $handler->display->display_options['fields']['field_person_bio']['id'] = 'field_person_bio';
-  $handler->display->display_options['fields']['field_person_bio']['table'] = 'field_data_field_person_bio';
-  $handler->display->display_options['fields']['field_person_bio']['field'] = 'field_person_bio';
-  $handler->display->display_options['fields']['field_person_bio']['label'] = '';
-  $handler->display->display_options['fields']['field_person_bio']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_person_bio']['type'] = 'text_summary_or_trimmed';
-  $handler->display->display_options['fields']['field_person_bio']['settings'] = array(
-    'trim_length' => '200',
-  );
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Draggableviews: Weight */
   $handler->display->display_options['sorts']['weight']['id'] = 'weight';
