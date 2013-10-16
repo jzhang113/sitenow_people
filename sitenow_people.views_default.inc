@@ -92,7 +92,7 @@ function sitenow_people_views_default_views() {
   $handler->display->display_options['fields']['field_person_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_person_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_person_image']['settings'] = array(
-    'image_style' => 'thumbnail',
+    'image_style' => 'person_small__100x100',
     'image_link' => '',
   );
   /* Field: Content: Title */
@@ -275,16 +275,16 @@ function sitenow_people_views_default_views() {
     'image_style' => 'person_large',
     'image_link' => '',
   );
-  /* Field: Person photo (thumbnail 100x100) */
+  /* Field: Person photo (small 100x100) */
   $handler->display->display_options['fields']['field_person_image']['id'] = 'field_person_image';
   $handler->display->display_options['fields']['field_person_image']['table'] = 'field_data_field_person_image';
   $handler->display->display_options['fields']['field_person_image']['field'] = 'field_person_image';
-  $handler->display->display_options['fields']['field_person_image']['ui_name'] = 'Person photo (thumbnail 100x100)';
+  $handler->display->display_options['fields']['field_person_image']['ui_name'] = 'Person photo (small 100x100)';
   $handler->display->display_options['fields']['field_person_image']['label'] = '';
   $handler->display->display_options['fields']['field_person_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_person_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_person_image']['settings'] = array(
-    'image_style' => 'thumbnail',
+    'image_style' => 'person_small__100x100',
     'image_link' => '',
   );
   /* Field: Content: Title */
@@ -402,7 +402,7 @@ function sitenow_people_views_default_views() {
   $handler->display->display_options['fields']['field_person_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_person_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_person_image']['settings'] = array(
-    'image_style' => 'thumbnail',
+    'image_style' => 'person_small__100x100',
     'image_link' => '',
   );
   /* Field: Content: Title */

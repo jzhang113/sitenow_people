@@ -53,6 +53,7 @@ features[field_instance][] = node-people-field_person_position
 features[field_instance][] = node-people-field_person_type
 features[field_instance][] = node-people-field_person_website
 features[image][] = person_large
+features[image][] = person_small__100x100
 features[node][] = people
 features[taxonomy][] = person_type
 features[taxonomy][] = sitenow_people_department
