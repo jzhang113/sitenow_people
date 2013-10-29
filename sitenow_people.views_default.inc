@@ -93,9 +93,9 @@ function sitenow_people_views_default_views() {
   $handler->display->display_options['fields']['field_person_image']['label'] = '';
   $handler->display->display_options['fields']['field_person_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_person_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_person_image']['type'] = 'file_rendered';
   $handler->display->display_options['fields']['field_person_image']['settings'] = array(
-    'image_style' => 'person_small__100x100',
-    'image_link' => '',
+    'file_view_mode' => 'person_small_100x100',
   );
   /* Field: Name */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -188,9 +188,9 @@ function sitenow_people_views_default_views() {
   $handler->display->display_options['fields']['field_person_image']['label'] = '';
   $handler->display->display_options['fields']['field_person_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_person_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_person_image']['type'] = 'file_rendered';
   $handler->display->display_options['fields']['field_person_image']['settings'] = array(
-    'image_style' => 'person_large',
-    'image_link' => '',
+    'file_view_mode' => 'person_large_220x220',
   );
   /* Field: Name */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -367,9 +367,9 @@ function sitenow_people_views_default_views() {
   $handler->display->display_options['fields']['field_person_image']['field'] = 'field_person_image';
   $handler->display->display_options['fields']['field_person_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_person_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_person_image']['type'] = 'file_rendered';
   $handler->display->display_options['fields']['field_person_image']['settings'] = array(
-    'image_style' => 'person_small__100x100',
-    'image_link' => '',
+    'file_view_mode' => 'person_small_100x100',
   );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
