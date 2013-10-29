@@ -141,13 +141,14 @@ function sitenow_people_panelizer_panelizer_defaults() {
     $pane->access = array();
     $pane->configuration = array(
       'label' => 'hidden',
-      'formatter' => 'image',
+      'formatter' => 'file_rendered',
       'delta_limit' => 0,
       'delta_offset' => '0',
       'delta_reversed' => FALSE,
       'formatter_settings' => array(
         'image_style' => 'person_large',
         'image_link' => '',
+        'file_view_mode' => 'person_large_220x220',
       ),
       'context' => 'panelizer',
       'override_title' => 0,
