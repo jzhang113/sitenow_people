@@ -145,25 +145,32 @@ function sitenow_people_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'panelizer_node:people_allowed_layouts';
-  $strongarm->value = 'O:22:"panels_allowed_layouts":4:{s:9:"allow_new";b:1;s:11:"module_name";s:21:"panelizer_node:people";s:23:"allowed_layout_settings";a:14:{s:8:"flexible";b:0;s:14:"twocol_stacked";b:0;s:13:"twocol_bricks";b:0;s:6:"twocol";b:0;s:25:"threecol_33_34_33_stacked";b:0;s:17:"threecol_33_34_33";b:0;s:25:"threecol_25_50_25_stacked";b:0;s:17:"threecol_25_50_25";b:0;s:6:"onecol";b:0;s:7:"hewston";b:1;s:4:"burr";b:1;s:22:"bryant_flipped_flipped";b:1;s:6:"bryant";b:1;s:6:"boxton";b:1;}s:10:"form_state";N;}';
-  $export['panelizer_node:people_allowed_layouts'] = $strongarm;
+  $strongarm->name = 'panelizer_node:people_allowed_layouts_default';
+  $strongarm->value = 1;
+  $export['panelizer_node:people_allowed_layouts_default'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'panelizer_node:people_allowed_types_default';
+  $strongarm->value = 1;
+  $export['panelizer_node:people_allowed_types_default'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'panelizer_node:people_default';
   $strongarm->value = array(
-    'token' => 'token',
-    'entity_form_field' => 'entity_form_field',
-    'entity_field' => 'entity_field',
-    'entity_field_extra' => 'entity_field_extra',
     'custom' => 'custom',
-    'block' => 'block',
-    'entity_view' => 'entity_view',
-    'views' => 'views',
     'views_panes' => 'views_panes',
-    'other' => 'other',
+    'token' => 0,
+    'entity_form_field' => 0,
+    'entity_field' => 0,
+    'entity_field_extra' => 0,
+    'block' => 0,
+    'entity_view' => 0,
+    'menu_tree' => 0,
+    'other' => 0,
   );
   $export['panelizer_node:people_default'] = $strongarm;
 
