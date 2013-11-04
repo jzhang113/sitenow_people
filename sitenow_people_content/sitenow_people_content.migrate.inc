@@ -64,7 +64,7 @@ class SiteNowPeopleMigration extends Migration {
     $this->addFieldMapping('field_person_image:title', 'image_title');
 
     $this->addFieldMapping('field_person_position', 'position');
-    $this->addFieldMapping('body', 'bio')
+    $this->addFieldMapping('field_person_bio', 'bio')
      ->arguments(array('format' => 'filtered_html'));
     $this->addFieldMapping('field_person_phone', 'phone');
     // Waiting for http://drupal.org/node/1010850
