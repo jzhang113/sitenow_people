@@ -119,6 +119,16 @@ function sitenow_people_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
+  // Exported permission: 'delete terms in sitenow_people_department'.
+  $permissions['delete terms in sitenow_people_department'] = array(
+    'name' => 'delete terms in sitenow_people_department',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'taxonomy',
+  );
+
   // Exported permission: 'edit any people content'.
   $permissions['edit any people content'] = array(
     'name' => 'edit any people content',
@@ -144,6 +154,16 @@ function sitenow_people_user_default_permissions() {
   // Exported permission: 'edit terms in person_type'.
   $permissions['edit terms in person_type'] = array(
     'name' => 'edit terms in person_type',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'edit terms in sitenow_people_department'.
+  $permissions['edit terms in sitenow_people_department'] = array(
+    'name' => 'edit terms in sitenow_people_department',
     'roles' => array(
       'administrator' => 'administrator',
       'webmaster' => 'webmaster',
