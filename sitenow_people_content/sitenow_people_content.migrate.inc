@@ -64,6 +64,14 @@ class SiteNowPeopleMigration extends Migration {
     $this->addFieldMapping('field_person_image:title', 'image_title');
 
     $this->addFieldMapping('field_person_position', 'position');
+
+    $this->addFieldMapping('field_person_type', 'type')
+         ->arguments(array(
+           'create_term' => TRUE,
+           'ignore_case' => TRUE,
+           )
+         );
+
     $this->addFieldMapping('field_person_bio', 'bio')
      ->arguments(array('format' => 'filtered_html'));
     $this->addFieldMapping('field_person_phone', 'phone');
@@ -86,10 +94,11 @@ class SiteNowPeopleMigration extends Migration {
     $columns[5] = array('image_alt', 'Image Alt');
     $columns[6] = array('image_title', 'Image title');
     $columns[7] = array('position', 'Position');
-    $columns[8] = array('bio', 'Bio');
-    $columns[9] = array('phone', 'Phone');
-    $columns[10] = array('website', 'Website');
-    $columns[11] = array('office', 'Office');
+    $columns[8] = array('type', 'Person Type');
+    $columns[9] = array('bio', 'Bio');
+    $columns[10] = array('phone', 'Phone');
+    $columns[11] = array('website', 'Website');
+    $columns[12] = array('office', 'Office');
 
     return $columns;
   }
