@@ -46,12 +46,7 @@ function sitenow_people_panels_default_page_manager_pages() {
       'name' => 'term',
       'settings' => array(
         'input_form' => 'tid',
-        'vids' => array(
-          3 => '3',
-          2 => '2',
-          4 => 0,
-          1 => 0,
-        ),
+        'vids' => array(),
         'breadcrumb' => 0,
         'transform' => 0,
       ),
