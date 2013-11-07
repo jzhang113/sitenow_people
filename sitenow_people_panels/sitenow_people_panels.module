@@ -113,7 +113,7 @@ function sitenow_people_panels_default_page_manager_pages() {
   $pane->configuration = array(
     'admin_title' => 'Active Term Filter',
     'title' => 'Alert',
-    'body' => '<p>You are currently filtering on &quot;<strong>%term:name</strong>&quot;. <a href="/people">Remove Filter</a></p>',
+    'body' => '<p>You are currently filtering on &quot;<strong>%term:name</strong>&quot;. <a href="../people">Remove Filter</a></p>',
     'format' => 'filtered_html',
     'substitute' => 1,
   );
