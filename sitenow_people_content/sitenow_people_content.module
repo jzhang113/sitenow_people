@@ -4,3 +4,87 @@
  */
 
 // Drupal needs this blank file.
+
+/**
+* Implements hook_form_FORM_ID_alter().
+*
+* disable edit and deletion of demo content.
+*/
+
+function sitenow_people_content_form_people_node_form_alter(&$form, &$form_state, $form_id) {
+  // check to see if this is add form or edit form
+  if(isset($form['nid']['#value'])) {
+    // call custom function to see if node has been migrated
+    $is_demo = _sitenow_people_content_get_demo_content($form['nid']['#value']);
+    // if node has been migrated disable form and set warning to notify users
+    if ($is_demo == TRUE) {
+      drupal_set_message(t("This person is demo content and can't be edited or deleted.<br/>To remove this person you must disable demo content for people"), 'error');
+      $form['#disabled'] = TRUE;
+    }
+  }
+}
+
+/**
+* Implements hook_form_FORM_ID_alter().
+*
+* disable deletion of demo content from node/$nid/delete.
+*/
+
+function sitenow_people_content_form_node_delete_confirm_alter(&$form, &$form_state, $form_id) {
+  if ($form['#node']->type == 'people' && _sitenow_people_content_get_demo_content($form['#node']->nid) == TRUE) {
+    $form['actions']['submit']['#access'] = FALSE;
+    drupal_set_message(t("This person is demo content and can't be edited or deleted.<br/>To remove this person you must disable demo content for people"), 'error');
+  }
+}
+
+/**
+* Implements hook_form_FORM_ID_alter().
+*
+* disable deletion of demo content from find content bulk operation.
+*/
+
+function sitenow_people_content_form_node_admin_content_alter(&$form, &$form_state, $form_id) {
+  if (isset($form_state['values']['operation']) && $form_state['values']['operation'] == 'delete') {
+    foreach ($form_state['values']['nodes'] as $key => $value) {
+      if ($value != 0) {
+        $node = node_load($value);
+        if ($node->type == 'people' && _sitenow_people_content_get_demo_content($node->nid) == TRUE) {
+          $form['actions']['submit']['#access'] = FALSE;
+          drupal_set_message(t("This person is demo content and can't be edited or deleted.<br/>To remove this person you must disable demo content for people"), 'error');
+        }
+      }
+    }
+  }
+}
+
+/**
+* Custom function to check and see if node has ever been migrated.
+* If migrated we assume it is demo content and returns true else returns false
+*
+* param nid
+*/
+
+function _sitenow_people_content_get_demo_content($nid) {
+  // initialize return value
+  $demo = FALSE;
+  if (isset($nid)) {
+    // query migrate_map_sitenowpeople to see if nid exists
+    $results = db_select('migrate_map_sitenowpeople', 'm')
+      ->fields('m', array('destid1'))
+      ->condition('destid1', $nid,'=')
+      ->execute();
+
+    // initialize array to hold results
+    $contents = array();
+    // loop through results and assign to array
+    foreach($results as $result) {
+      $contents[] = $result->destid1;
+    }
+    // check to see if any results
+    if(count($contents)) {
+      // set return value to true if there are results
+      $demo = TRUE;
+    }
+  }
+  return $demo;
+}

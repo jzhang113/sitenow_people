@@ -1,34 +1,33 @@
 <?php
 
 /*
- * Implements hook_install().
+ * Implements hook_enable().
  */
-function sitenow_people_content_install() {
-  // Run migrations.
-  $migrations = migrate_migrations();
-  foreach ($migrations as $machine_name => $migration) {
-    if($machine_name == "SiteNowPeople") {
-      // Create an operation for the Batch API
-      $operations[] = array('_sitenow_content_import', array($machine_name, t('Importing SiteNow People content.')));
-    }
+
+function sitenow_people_content_enable() {
+  // Ensure that migration classes are registered.
+  migrate_get_module_apis(TRUE);
+
+  // Import the content
+  $classes = array('SiteNowPeople');
+  foreach ($classes as $class) {
+    $migration = Migration::getInstance($class);
+    $migration->processImport();
   }
-
-  // Create a batch
-  $batch = array(
-    'title' => t('Importing content'),
-    'operations' => $operations,
-    'file' => drupal_get_path('module', 'sitenow_people_content') . '/sitenow_people_content.migrate.inc',
-  );
-
-  // Run the batch using Batch API
-  batch_set($batch);
+  // Remove messages set by migrate module.
+  drupal_get_messages('completed');
 }
 
 /*
  * Implements hook_disable().
  */
 function sitenow_people_content_disable() {
-  // Deregister the SiteNowPeople migration on disabled, othewise warnings
-  // occur.
-  Migration::deregisterMigration('SiteNowPeople');
+  // Remove the imported content
+  $classes = array('SiteNowPeople');
+  foreach ($classes as $class) {
+    $migration = Migration::getInstance($class);
+    $migration->processRollback();
+  }
+  // Remove messages set by migrate module.
+  drupal_get_messages('completed');
 }
