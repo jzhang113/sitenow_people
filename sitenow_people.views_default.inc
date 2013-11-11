@@ -22,7 +22,9 @@ function sitenow_people_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'People Directory';
   $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['link_display'] = 'custom_url';
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
@@ -58,14 +60,14 @@ function sitenow_people_views_default_views() {
     'people' => 'people',
   );
 
-  /* Display: Table of People */
-  $handler = $view->new_display('panel_pane', 'Table of People', 'panel_pane_people_table');
+  /* Display: Table */
+  $handler = $view->new_display('panel_pane', 'Table', 'people_table');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['link_url'] = 'people';
   $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'mini';
+  $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '20';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
@@ -90,7 +92,6 @@ function sitenow_people_views_default_views() {
   $handler->display->display_options['fields']['field_person_image']['table'] = 'field_data_field_person_image';
   $handler->display->display_options['fields']['field_person_image']['field'] = 'field_person_image';
   $handler->display->display_options['fields']['field_person_image']['ui_name'] = 'Photo (small 100x100)';
-  $handler->display->display_options['fields']['field_person_image']['label'] = '';
   $handler->display->display_options['fields']['field_person_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_person_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_person_image']['type'] = 'file_rendered';
@@ -102,7 +103,7 @@ function sitenow_people_views_default_views() {
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['ui_name'] = 'Name';
-  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['label'] = 'Name';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
@@ -174,7 +175,7 @@ function sitenow_people_views_default_views() {
   );
   $handler->display->display_options['arguments']['tid']['validate_options']['transform'] = TRUE;
   $handler->display->display_options['arguments']['tid']['reduce_duplicates'] = TRUE;
-  $handler->display->display_options['pane_title'] = 'Table View of People';
+  $handler->display->display_options['pane_title'] = 'People table list';
   $handler->display->display_options['pane_description'] = 'Table layout of people';
   $handler->display->display_options['pane_category']['name'] = 'People';
   $handler->display->display_options['pane_category']['weight'] = '0';
@@ -197,15 +198,15 @@ function sitenow_people_views_default_views() {
       'label' => 'Content: Has taxonomy term ID',
     ),
   );
+  $handler->display->display_options['inherit_panels_path'] = '1';
 
-  /* Display: Grid view of People */
-  $handler = $view->new_display('panel_pane', 'Grid view of People', 'panel_pane_people_grid');
+  /* Display: Grid */
+  $handler = $view->new_display('panel_pane', 'Grid', 'people_grid');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'mini';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '9';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Photo (large 220x220) */
   $handler->display->display_options['fields']['field_person_image']['id'] = 'field_person_image';
@@ -272,7 +273,7 @@ function sitenow_people_views_default_views() {
     'person_type' => 'person_type',
   );
   $handler->display->display_options['arguments']['tid']['reduce_duplicates'] = TRUE;
-  $handler->display->display_options['pane_title'] = 'Grid View of People';
+  $handler->display->display_options['pane_title'] = 'People grid list';
   $handler->display->display_options['pane_description'] = 'Grid layout of people';
   $handler->display->display_options['pane_category']['name'] = 'People';
   $handler->display->display_options['pane_category']['weight'] = '0';
@@ -296,8 +297,8 @@ function sitenow_people_views_default_views() {
     ),
   );
 
-  /* Display: Sidebar List of People */
-  $handler = $view->new_display('panel_pane', 'Sidebar List of People', 'panel_pane_people_sidebar');
+  /* Display: Sidebar */
+  $handler = $view->new_display('panel_pane', 'Sidebar', 'people_sidebar');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['use_more'] = TRUE;
@@ -367,7 +368,7 @@ function sitenow_people_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  $handler->display->display_options['pane_title'] = 'Sidebar List of People';
+  $handler->display->display_options['pane_title'] = 'People sidebar list';
   $handler->display->display_options['pane_description'] = 'List of People';
   $handler->display->display_options['pane_category']['name'] = 'People';
   $handler->display->display_options['pane_category']['weight'] = '0';
@@ -457,8 +458,8 @@ function sitenow_people_views_default_views() {
   $handler->display->display_options['menu']['name'] = 'management';
   $handler->display->display_options['menu']['context'] = 0;
 
-  /* Display: List of Person Types */
-  $handler = $view->new_display('panel_pane', 'List of Person Types', 'panel_pane_people_types_list');
+  /* Display: Person type links */
+  $handler = $view->new_display('panel_pane', 'Person type links', 'people_type_links');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Filter by Type';
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -520,6 +521,8 @@ function sitenow_people_views_default_views() {
   $handler->display->display_options['arguments']['tid']['validate_options']['vocabularies'] = array(
     'person_type' => 'person_type',
   );
+  $handler->display->display_options['pane_title'] = 'Person type links';
+  $handler->display->display_options['pane_description'] = 'Links for listing people by type';
   $handler->display->display_options['pane_category']['name'] = 'People';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['allow']['use_pager'] = 0;
@@ -532,8 +535,8 @@ function sitenow_people_views_default_views() {
   $handler->display->display_options['allow']['exposed_form'] = 0;
   $handler->display->display_options['allow']['fields_override'] = 0;
 
-  /* Display: List of Departments */
-  $handler = $view->new_display('panel_pane', 'List of Departments', 'panel_pane_people_department_list');
+  /* Display: Person department links */
+  $handler = $view->new_display('panel_pane', 'Person department links', 'people_department_links');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Filter by Department';
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -585,6 +588,8 @@ function sitenow_people_views_default_views() {
   $handler->display->display_options['arguments']['tid']['validate_options']['vocabularies'] = array(
     'sitenow_people_department' => 'sitenow_people_department',
   );
+  $handler->display->display_options['pane_title'] = 'Person department links';
+  $handler->display->display_options['pane_description'] = 'Links for listing people by department';
   $handler->display->display_options['pane_category']['name'] = 'People';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['allow']['use_pager'] = 0;
