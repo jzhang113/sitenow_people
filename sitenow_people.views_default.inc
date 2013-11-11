@@ -202,6 +202,8 @@ function sitenow_people_views_default_views() {
 
   /* Display: Grid */
   $handler = $view->new_display('panel_pane', 'Grid', 'people_grid');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'views-grid';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
