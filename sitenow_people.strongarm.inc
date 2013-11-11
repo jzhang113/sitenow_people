@@ -52,6 +52,9 @@ function sitenow_people_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'ical' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -124,13 +127,13 @@ function sitenow_people_strongarm() {
     'status' => 1,
     'view modes' => array(
       'page_manager' => array(
-        'status' => 1,
+        'status' => 0,
         'default' => 1,
         'choice' => 0,
       ),
       'default' => array(
-        'status' => 0,
-        'default' => 0,
+        'status' => 1,
+        'default' => 1,
         'choice' => 0,
       ),
       'teaser' => array(
@@ -170,6 +173,7 @@ function sitenow_people_strongarm() {
     'block' => 0,
     'entity_view' => 0,
     'menu_tree' => 0,
+    'views' => 0,
     'other' => 0,
   );
   $export['panelizer_node:people_default'] = $strongarm;

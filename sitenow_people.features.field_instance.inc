@@ -19,10 +19,9 @@ function sitenow_people_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 2,
+        'type' => 'hidden',
+        'weight' => 10,
       ),
       'ical' => array(
         'label' => 'above',
@@ -65,10 +64,9 @@ function sitenow_people_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 3,
+        'type' => 'hidden',
+        'weight' => 11,
       ),
       'ical' => array(
         'label' => 'above',
@@ -114,7 +112,7 @@ function sitenow_people_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -158,7 +156,7 @@ function sitenow_people_field_default_field_instances() {
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_default',
-        'weight' => 12,
+        'weight' => 9,
       ),
       'ical' => array(
         'label' => 'above',
@@ -207,7 +205,7 @@ function sitenow_people_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 6,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -240,11 +238,11 @@ function sitenow_people_field_default_field_instances() {
     'description' => 'Valid email address for this person. Will be automatically formatted as a mail-to link.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'email',
         'settings' => array(),
         'type' => 'email_default',
-        'weight' => 10,
+        'weight' => 2,
       ),
       'ical' => array(
         'label' => 'above',
@@ -285,14 +283,14 @@ function sitenow_people_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => '',
+          'image_style' => 'people_grid',
         ),
         'type' => 'image',
-        'weight' => 4,
+        'weight' => 0,
       ),
       'ical' => array(
         'label' => 'above',
@@ -382,7 +380,7 @@ function sitenow_people_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 11,
+        'weight' => 5,
       ),
       'ical' => array(
         'label' => 'above',
@@ -428,7 +426,7 @@ function sitenow_people_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_plain',
-        'weight' => 8,
+        'weight' => 4,
       ),
       'ical' => array(
         'label' => 'above',
@@ -469,11 +467,11 @@ function sitenow_people_field_default_field_instances() {
     'description' => 'An optional position field, e.g. Associate Professor.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 1,
       ),
       'ical' => array(
         'label' => 'above',
@@ -562,7 +560,7 @@ function sitenow_people_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 9,
+        'weight' => 6,
       ),
       'ical' => array(
         'label' => 'above',
