@@ -87,16 +87,16 @@ function sitenow_people_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Photo (small 100x100) */
+  /* Field: Photo */
   $handler->display->display_options['fields']['field_person_image']['id'] = 'field_person_image';
   $handler->display->display_options['fields']['field_person_image']['table'] = 'field_data_field_person_image';
   $handler->display->display_options['fields']['field_person_image']['field'] = 'field_person_image';
-  $handler->display->display_options['fields']['field_person_image']['ui_name'] = 'Photo (small 100x100)';
+  $handler->display->display_options['fields']['field_person_image']['ui_name'] = 'Photo';
   $handler->display->display_options['fields']['field_person_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_person_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_person_image']['type'] = 'file_rendered';
   $handler->display->display_options['fields']['field_person_image']['settings'] = array(
-    'file_view_mode' => 'person_small_100x100',
+    'file_view_mode' => 'people_table',
   );
   /* Field: Name */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -208,17 +208,17 @@ function sitenow_people_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '9';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Photo (large 220x220) */
+  /* Field: Photo */
   $handler->display->display_options['fields']['field_person_image']['id'] = 'field_person_image';
   $handler->display->display_options['fields']['field_person_image']['table'] = 'field_data_field_person_image';
   $handler->display->display_options['fields']['field_person_image']['field'] = 'field_person_image';
-  $handler->display->display_options['fields']['field_person_image']['ui_name'] = 'Photo (large 220x220)';
+  $handler->display->display_options['fields']['field_person_image']['ui_name'] = 'Photo';
   $handler->display->display_options['fields']['field_person_image']['label'] = '';
   $handler->display->display_options['fields']['field_person_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_person_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_person_image']['type'] = 'file_rendered';
   $handler->display->display_options['fields']['field_person_image']['settings'] = array(
-    'file_view_mode' => 'person_large_220x220',
+    'file_view_mode' => 'articles_grid',
   );
   /* Field: Name */
   $handler->display->display_options['fields']['title']['id'] = 'title';

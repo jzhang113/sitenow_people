@@ -350,12 +350,16 @@ function sitenow_people_field_default_field_instances() {
         'manualcrop_instant_crop' => FALSE,
         'manualcrop_instant_preview' => 1,
         'manualcrop_require_cropping' => array(
+          'crop_selection_rectangle_3-2' => 0,
+          'featured_slider' => 0,
           'person_large' => 0,
           'person_small__100x100' => 0,
         ),
         'manualcrop_styles_list' => array(
-          'person_large' => 'person_large',
-          'person_small__100x100' => 'person_small__100x100',
+          'crop_selection_rectangle_3-2' => 'crop_selection_rectangle_3-2',
+          'featured_slider' => 0,
+          'person_large' => 0,
+          'person_small__100x100' => 0,
         ),
         'manualcrop_styles_mode' => 'include',
         'manualcrop_thumblist' => 0,

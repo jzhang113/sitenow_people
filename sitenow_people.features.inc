@@ -26,84 +26,76 @@ function sitenow_people_views_api($module = NULL, $api = NULL) {
 function sitenow_people_image_default_styles() {
   $styles = array();
 
-  // Exported image style: person_large.
-  $styles['person_large'] = array(
-    'name' => 'person_large',
-    'label' => 'Person Large (220x220)',
+  // Exported image style: people_grid.
+  $styles['people_grid'] = array(
+    'name' => 'people_grid',
+    'label' => 'People Grid',
     'effects' => array(
-      3 => array(
-        'label' => 'Crop and scale manually',
-        'help' => 'Crop and scale a user-selected area, respecting the ratio of the destination width and height.',
-        'effect callback' => 'manualcrop_crop_and_scale_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'manualcrop_crop_and_scale_form',
-        'summary theme' => 'manualcrop_crop_and_scale_summary',
+      11 => array(
+        'label' => 'Reuse a Manual Crop selection',
+        'help' => 'Reuse a crop selection from another Manual Crop enabled image style.',
+        'effect callback' => 'manualcrop_reuse_effect',
+        'form callback' => 'manualcrop_reuse_form',
+        'summary theme' => 'manualcrop_reuse_summary',
         'module' => 'manualcrop',
-        'name' => 'manualcrop_crop_and_scale',
+        'name' => 'manualcrop_reuse',
         'data' => array(
-          'width' => 220,
-          'height' => 220,
-          'upscale' => 1,
-          'respectminimum' => 1,
-          'onlyscaleifcrop' => 0,
-          'style_name' => 'person_large',
+          'reusestyle' => 'crop_selection_rectangle_3-2',
+          'style_name' => 'people_grid',
         ),
         'weight' => 0,
       ),
-      4 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
+      12 => array(
+        'label' => 'Scale',
+        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
+        'effect callback' => 'image_scale_effect',
+        'dimensions callback' => 'image_scale_dimensions',
+        'form callback' => 'image_scale_form',
+        'summary theme' => 'image_scale_summary',
         'module' => 'image',
-        'name' => 'image_scale_and_crop',
+        'name' => 'image_scale',
         'data' => array(
-          'width' => 220,
-          'height' => 220,
+          'width' => 500,
+          'height' => '',
+          'upscale' => 0,
         ),
         'weight' => 2,
       ),
     ),
   );
 
-  // Exported image style: person_small__100x100.
-  $styles['person_small__100x100'] = array(
-    'name' => 'person_small__100x100',
-    'label' => 'Person Small (100x100)',
+  // Exported image style: people_table.
+  $styles['people_table'] = array(
+    'name' => 'people_table',
+    'label' => 'People Table',
     'effects' => array(
-      1 => array(
-        'label' => 'Crop and scale manually',
-        'help' => 'Crop and scale a user-selected area, respecting the ratio of the destination width and height.',
-        'effect callback' => 'manualcrop_crop_and_scale_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'manualcrop_crop_and_scale_form',
-        'summary theme' => 'manualcrop_crop_and_scale_summary',
+      13 => array(
+        'label' => 'Reuse a Manual Crop selection',
+        'help' => 'Reuse a crop selection from another Manual Crop enabled image style.',
+        'effect callback' => 'manualcrop_reuse_effect',
+        'form callback' => 'manualcrop_reuse_form',
+        'summary theme' => 'manualcrop_reuse_summary',
         'module' => 'manualcrop',
-        'name' => 'manualcrop_crop_and_scale',
+        'name' => 'manualcrop_reuse',
         'data' => array(
-          'width' => 100,
-          'height' => 100,
-          'upscale' => 1,
-          'respectminimum' => 1,
-          'onlyscaleifcrop' => 0,
-          'style_name' => 'person_small__100x100',
+          'reusestyle' => 'crop_selection_rectangle_3-2',
+          'style_name' => 'people_table',
         ),
         'weight' => 0,
       ),
-      2 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
+      14 => array(
+        'label' => 'Scale',
+        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
+        'effect callback' => 'image_scale_effect',
+        'dimensions callback' => 'image_scale_dimensions',
+        'form callback' => 'image_scale_form',
+        'summary theme' => 'image_scale_summary',
         'module' => 'image',
-        'name' => 'image_scale_and_crop',
+        'name' => 'image_scale',
         'data' => array(
           'width' => 100,
-          'height' => 100,
+          'height' => '',
+          'upscale' => 0,
         ),
         'weight' => 2,
       ),
