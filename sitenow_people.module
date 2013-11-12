@@ -15,8 +15,8 @@ function sitenow_people_form_ctools_entity_field_content_type_formatter_styles_a
     // Restrict the view mode options to the entity view modes correspinding to
     // the manual crop options available for this field.
     $form['file_view_mode']['#options'] = array(
-      'person_small_100x100' => 'Person Small (100x100)',
-      'person_large_220x220' => 'Person Large (220x220)',
+      'people_table' => 'Person Small (100x67)',
+      'people_grid' => 'Person Large (500x333)',
     );
   }
 }
