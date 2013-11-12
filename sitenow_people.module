@@ -6,8 +6,6 @@
 
 include_once 'sitenow_people.features.inc';
 
-drupal_add_css(drupal_get_path('module', 'sitenow_people') . '/css/sitenow_people.css');
-
 /**
  * Implements hook_form_FORM_ID_alter().
  */
