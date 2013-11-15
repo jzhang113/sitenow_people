@@ -115,6 +115,7 @@ function sitenow_people_content_form_file_entity_admin_file_alter(&$form, &$form
       if ($value != 0) {
         $file = file_load($value);
         $usage = file_usage_list($file);
+        $is_demo = FALSE;
         foreach ($usage['file']['node'] as $key => $value) {
           // check if node used on is demo content
           if (_sitenow_people_content_get_demo_content($key) == TRUE) {
