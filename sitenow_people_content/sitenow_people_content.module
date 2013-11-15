@@ -58,6 +58,100 @@ function sitenow_people_content_form_node_admin_content_alter(&$form, &$form_sta
 }
 
 /**
+* Implements hook_form_FORM_ID_alter().
+*
+* disable edit and deletion of demo content files.
+*/
+
+function sitenow_people_content_form_file_entity_edit_alter(&$form, &$form_state, $form_id) {
+  // load usage info
+  $usage = file_usage_list($form['#entity']);
+  // only check to see if it is demo content if it is bein used
+  if ($usage) {
+    // loop through each node
+    foreach ($usage['file']['node'] as $key => $value) {
+      // check if node used on is demo content
+      $is_demo = _sitenow_people_content_get_demo_content($key);
+      if ($is_demo == TRUE) {
+        drupal_set_message(t("This file is demo content and can't be edited or deleted.<br/>To remove this file you must disable demo content for people"), 'error');
+        $form['#disabled'] = TRUE;
+      }
+    }
+  }
+}
+
+/**
+* Implements hook_form_FORM_ID_alter().
+*
+* disable deletion of demo content files from file/$fid/delete.
+*/
+
+function sitenow_people_content_form_file_entity_delete_form_alter(&$form, &$form_state, $form_id) {
+  // load file object
+  $file = file_load($form['fid']['#value']);
+  // load usage info
+  $usage = file_usage_list($file);
+  // only check to see if it is demo content if it is bein used
+  if ($usage) {
+    foreach ($usage['file']['node'] as $key => $value) {
+      $is_demo = _sitenow_people_content_get_demo_content($key);
+      if ($is_demo == TRUE) {
+        drupal_set_message(t("This file is demo content and can't be edited or deleted.<br/>To remove this file you must disable demo content for people"), 'error');
+        $form['actions']['submit']['#access'] = FALSE;
+      }
+    }
+  }
+}
+
+/**
+* Implements hook_form_FORM_ID_alter().
+*
+* disable deletion of demo content files through bulk operation.
+*/
+
+function sitenow_people_content_form_file_entity_admin_file_alter(&$form, &$form_state, $form_id) {
+  if (isset($form_state['values']['operation']) && $form_state['values']['operation'] == 'delete') {
+    foreach ($form_state['values']['files'] as $key => $value) {
+      if ($value != 0) {
+        $file = file_load($value);
+        $usage = file_usage_list($file);
+        $is_demo = FALSE;
+        foreach ($usage['file']['node'] as $key => $value) {
+          // check if node used on is demo content
+          if (_sitenow_people_content_get_demo_content($key) == TRUE) {
+            $is_demo =TRUE;
+          }
+        }
+        if ($is_demo == TRUE) {
+          drupal_set_message(t("This file is demo content and can't be edited or deleted.<br/>To remove this file you must disable demo content for people"), 'error');
+          $form['actions']['submit']['#access'] = FALSE;
+        }
+      }
+    }
+  }
+}
+
+/**
+* Implements hook_form_FORM_ID_alter().
+*
+* disable edit and deletion of demo content taxonomy terms.
+*/
+
+function sitenow_people_content_form_taxonomy_form_term_alter(&$form, &$form_state, $form_id) {
+  $usage = taxonomy_select_nodes($form['tid']);
+  $is_demo = FALSE;
+  foreach ($usage as $value) {
+    if(_sitenow_people_content_get_demo_content($value) == TRUE) {
+      $is_demo =TRUE;
+    }
+  }
+  if ($is_demo == TRUE) {
+    drupal_set_message(t("This file is demo content and can't be edited or deleted.<br/>To remove this file you must disable demo content for people"), 'error');
+    $form['#disabled'] = TRUE;
+  }
+}
+
+/**
 * Custom function to check and see if node has ever been migrated.
 * If migrated we assume it is demo content and returns true else returns false
 *

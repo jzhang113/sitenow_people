@@ -90,6 +90,35 @@ class SiteNowPeopleMigration extends Migration {
     $this->addFieldMapping('is_new', 'is_new')->defaultValue(TRUE);
   }
 
+  /**
+   * Implements migrate::postRollback().
+   * use this to delete demo taxonomy terms that were imported
+   */
+  public function postRollback() {
+    parent::postRollback();
+    // initialize array of term names
+    $types = array('Demo person type 1','Demo person type 2');
+    $depts = array('Demo Department 1','Demo Department 2');
+    // loop through array of types
+    foreach ($types as $type) {
+      // get term ids from name
+      $terms = taxonomy_get_term_by_name($type, 'person_type');
+      // loop through term ids and delete them
+      foreach ($terms as $term) {
+        taxonomy_term_delete($term->tid);
+      }
+    }
+    // loop through array of depts
+    foreach ($depts as $dept) {
+      // get term ids from name
+      $terms = taxonomy_get_term_by_name($dept, 'sitenow_people_department');
+      // loop through term ids and delete them
+      foreach ($terms as $term) {
+        taxonomy_term_delete($term->tid);
+      }
+    }
+  }
+
   // Function for the CSV document
   function csvcolumns() {
     // Title", "Path", "Body"
