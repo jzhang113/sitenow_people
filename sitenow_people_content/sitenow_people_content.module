@@ -18,7 +18,7 @@ function sitenow_people_content_form_people_node_form_alter(&$form, &$form_state
     $is_demo = _sitenow_people_content_get_demo_content($form['nid']['#value']);
     // if node has been migrated disable form and set warning to notify users
     if ($is_demo == TRUE) {
-      drupal_set_message(t("This person is demo content and can't be edited or deleted.<br/>To remove this person you must disable demo content for people"), 'error');
+      drupal_set_message(t("This person is demo content and cannot be edited or deleted.<br/>To remove this person you must <a href='@disable-people-content'>disable demo content for people</a>.", array('@disable-people-content' => url('admin/apps/local/sitenow_people/configure'))), 'warning');
       $form['#disabled'] = TRUE;
     }
   }
@@ -33,7 +33,7 @@ function sitenow_people_content_form_people_node_form_alter(&$form, &$form_state
 function sitenow_people_content_form_node_delete_confirm_alter(&$form, &$form_state, $form_id) {
   if ($form['#node']->type == 'people' && _sitenow_people_content_get_demo_content($form['#node']->nid) == TRUE) {
     $form['actions']['submit']['#access'] = FALSE;
-    drupal_set_message(t("This person is demo content and can't be edited or deleted.<br/>To remove this person you must disable demo content for people"), 'error');
+    drupal_set_message(t("This person is demo content and cannot be edited or deleted.<br/>To remove this person you must <a href='@disable-people-content'>disable demo content for people</a>.", array('@disable-people-content' => url('admin/apps/local/sitenow_people/configure'))), 'warning');
   }
 }
 
@@ -50,7 +50,7 @@ function sitenow_people_content_form_node_admin_content_alter(&$form, &$form_sta
         $node = node_load($value);
         if ($node->type == 'people' && _sitenow_people_content_get_demo_content($node->nid) == TRUE) {
           $form['actions']['submit']['#access'] = FALSE;
-          drupal_set_message(t("This person is demo content and can't be edited or deleted.<br/>To remove this person you must disable demo content for people"), 'error');
+          drupal_set_message(t("This person is demo content and cannot be edited or deleted.<br/>To remove this person you must <a href='@disable-people-content'>disable demo content for people</a>.", array('@disable-people-content' => url('admin/apps/local/sitenow_people/configure'))), 'warning');
         }
       }
     }
@@ -73,7 +73,7 @@ function sitenow_people_content_form_file_entity_edit_alter(&$form, &$form_state
       // check if node used on is demo content
       $is_demo = _sitenow_people_content_get_demo_content($key);
       if ($is_demo == TRUE) {
-        drupal_set_message(t("This file is demo content and can't be edited or deleted.<br/>To remove this file you must disable demo content for people"), 'error');
+        drupal_set_message(t("This file is demo content and cannot be edited or deleted.<br/>To remove this file you must <a href='@disable-people-content'>disable demo content for people</a>.", array('@disable-people-content' => url('admin/apps/local/sitenow_people/configure'))), 'warning');
         $form['#disabled'] = TRUE;
       }
     }
@@ -96,7 +96,7 @@ function sitenow_people_content_form_file_entity_delete_form_alter(&$form, &$for
     foreach ($usage['file']['node'] as $key => $value) {
       $is_demo = _sitenow_people_content_get_demo_content($key);
       if ($is_demo == TRUE) {
-        drupal_set_message(t("This file is demo content and can't be edited or deleted.<br/>To remove this file you must disable demo content for people"), 'error');
+        drupal_set_message(t("This file is demo content and cannot be edited or deleted.<br/>To remove this file you must <a href='@disable-people-content'>disable demo content for people</a>.", array('@disable-people-content' => url('admin/apps/local/sitenow_people/configure'))), 'warning');
         $form['actions']['submit']['#access'] = FALSE;
       }
     }
@@ -123,7 +123,7 @@ function sitenow_people_content_form_file_entity_admin_file_alter(&$form, &$form
           }
         }
         if ($is_demo == TRUE) {
-          drupal_set_message(t("This file is demo content and can't be edited or deleted.<br/>To remove this file you must disable demo content for people"), 'error');
+          drupal_set_message(t("This file is demo content and cannot be edited or deleted.<br/>To remove this file you must <a href='@disable-people-content'>disable demo content for people</a>.", array('@disable-people-content' => url('admin/apps/local/sitenow_people/configure'))), 'warning');
           $form['actions']['submit']['#access'] = FALSE;
         }
       }
@@ -146,7 +146,7 @@ function sitenow_people_content_form_taxonomy_form_term_alter(&$form, &$form_sta
     }
   }
   if ($is_demo == TRUE) {
-    drupal_set_message(t("This file is demo content and can't be edited or deleted.<br/>To remove this file you must disable demo content for people"), 'error');
+    drupal_set_message(t("This term is demo content and cannot be edited or deleted.<br/>To remove this term you must <a href='@disable-people-content'>disable demo content for people</a>.", array('@disable-people-content' => url('admin/apps/local/sitenow_people/configure'))), 'warning');
     $form['#disabled'] = TRUE;
   }
 }
@@ -157,7 +157,6 @@ function sitenow_people_content_form_taxonomy_form_term_alter(&$form, &$form_sta
 *
 * param nid
 */
-
 function _sitenow_people_content_get_demo_content($nid) {
   // initialize return value
   $demo = FALSE;
