@@ -346,7 +346,7 @@ function sitenow_people_field_default_field_instances() {
         'manualcrop_enable' => 1,
         'manualcrop_inline_crop' => FALSE,
         'manualcrop_instant_crop' => FALSE,
-        'manualcrop_instant_preview' => 1,
+        'manualcrop_instant_preview' => 0,
         'manualcrop_require_cropping' => array(
           'crop_selection_rectangle_3-2' => 0,
           'featured_slider' => 0,
