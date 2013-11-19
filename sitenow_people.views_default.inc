@@ -502,8 +502,8 @@ function sitenow_people_views_default_views() {
     ),
   );
 
-  /* Display: Sidebar */
-  $handler = $view->new_display('panel_pane', 'Sidebar', 'people_sidebar');
+  /* Display: Simple */
+  $handler = $view->new_display('panel_pane', 'Simple', 'people_simple');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['use_more'] = TRUE;
@@ -659,7 +659,7 @@ function sitenow_people_views_default_views() {
     5 => 0,
     3 => 0,
   );
-  $handler->display->display_options['pane_title'] = 'People sidebar list';
+  $handler->display->display_options['pane_title'] = 'People simple list';
   $handler->display->display_options['pane_description'] = 'List of People';
   $handler->display->display_options['pane_category']['name'] = 'People';
   $handler->display->display_options['pane_category']['weight'] = '0';
@@ -872,6 +872,7 @@ function sitenow_people_views_default_views() {
   $handler->display->display_options['sorts']['weight']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['sorts']['weight']['field'] = 'weight';
   $handler->display->display_options['sorts']['weight']['relationship'] = 'term_node_tid';
+  $handler->display->display_options['sorts']['weight']['order'] = 'DESC';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Taxonomy term: Term ID */
   $handler->display->display_options['arguments']['tid']['id'] = 'tid';
