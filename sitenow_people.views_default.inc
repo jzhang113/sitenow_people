@@ -24,6 +24,7 @@ function sitenow_people_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'People Directory';
   $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'View more';
   $handler->display->display_options['link_display'] = 'custom_url';
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -63,6 +64,13 @@ function sitenow_people_views_default_views() {
   /* Display: Table */
   $handler = $view->new_display('panel_pane', 'Table', 'people_table');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['use_more'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'View more';
   $handler->display->display_options['link_url'] = 'people';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
@@ -175,6 +183,79 @@ function sitenow_people_views_default_views() {
   );
   $handler->display->display_options['arguments']['tid']['validate_options']['transform'] = TRUE;
   $handler->display->display_options['arguments']['tid']['reduce_duplicates'] = TRUE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'people' => 'people',
+  );
+  /* Filter criterion: Content: Department (field_person_department) */
+  $handler->display->display_options['filters']['field_person_department_tid']['id'] = 'field_person_department_tid';
+  $handler->display->display_options['filters']['field_person_department_tid']['table'] = 'field_data_field_person_department';
+  $handler->display->display_options['filters']['field_person_department_tid']['field'] = 'field_person_department_tid';
+  $handler->display->display_options['filters']['field_person_department_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_person_department_tid']['expose']['operator_id'] = 'field_person_department_tid_op';
+  $handler->display->display_options['filters']['field_person_department_tid']['expose']['label'] = 'Filter by department';
+  $handler->display->display_options['filters']['field_person_department_tid']['expose']['description'] = 'Optionally display people from a specific department';
+  $handler->display->display_options['filters']['field_person_department_tid']['expose']['operator'] = 'field_person_department_tid_op';
+  $handler->display->display_options['filters']['field_person_department_tid']['expose']['identifier'] = 'field_person_department_tid';
+  $handler->display->display_options['filters']['field_person_department_tid']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_person_department_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    4 => 0,
+    5 => 0,
+    3 => 0,
+  );
+  $handler->display->display_options['filters']['field_person_department_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_person_department_tid']['vocabulary'] = 'sitenow_people_department';
+  /* Filter criterion: Content: Person Type (field_person_type) */
+  $handler->display->display_options['filters']['field_person_type_tid']['id'] = 'field_person_type_tid';
+  $handler->display->display_options['filters']['field_person_type_tid']['table'] = 'field_data_field_person_type';
+  $handler->display->display_options['filters']['field_person_type_tid']['field'] = 'field_person_type_tid';
+  $handler->display->display_options['filters']['field_person_type_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_person_type_tid']['expose']['operator_id'] = 'field_person_type_tid_op';
+  $handler->display->display_options['filters']['field_person_type_tid']['expose']['label'] = 'Filter by person type';
+  $handler->display->display_options['filters']['field_person_type_tid']['expose']['description'] = 'Optionally display people by person type';
+  $handler->display->display_options['filters']['field_person_type_tid']['expose']['operator'] = 'field_person_type_tid_op';
+  $handler->display->display_options['filters']['field_person_type_tid']['expose']['identifier'] = 'field_person_type_tid';
+  $handler->display->display_options['filters']['field_person_type_tid']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_person_type_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    4 => 0,
+    5 => 0,
+    3 => 0,
+  );
+  $handler->display->display_options['filters']['field_person_type_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_person_type_tid']['vocabulary'] = 'person_type';
+  /* Filter criterion: Content: Promoted to front page */
+  $handler->display->display_options['filters']['promote']['id'] = 'promote';
+  $handler->display->display_options['filters']['promote']['table'] = 'node';
+  $handler->display->display_options['filters']['promote']['field'] = 'promote';
+  $handler->display->display_options['filters']['promote']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['promote']['expose']['operator_id'] = '';
+  $handler->display->display_options['filters']['promote']['expose']['label'] = 'Filter by promoted to front';
+  $handler->display->display_options['filters']['promote']['expose']['description'] = 'Optionally display people marked promoted to front';
+  $handler->display->display_options['filters']['promote']['expose']['operator'] = 'promote_op';
+  $handler->display->display_options['filters']['promote']['expose']['identifier'] = 'promote';
+  $handler->display->display_options['filters']['promote']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    4 => 0,
+    5 => 0,
+    3 => 0,
+  );
   $handler->display->display_options['pane_title'] = 'People table list';
   $handler->display->display_options['pane_description'] = 'Table layout of people';
   $handler->display->display_options['pane_category']['name'] = 'People';
@@ -183,10 +264,10 @@ function sitenow_people_views_default_views() {
   $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
   $handler->display->display_options['allow']['offset'] = 0;
   $handler->display->display_options['allow']['link_to_view'] = 0;
-  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 'more_link';
   $handler->display->display_options['allow']['path_override'] = 0;
   $handler->display->display_options['allow']['title_override'] = 'title_override';
-  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['exposed_form'] = 'exposed_form';
   $handler->display->display_options['allow']['fields_override'] = 'fields_override';
   $handler->display->display_options['argument_input'] = array(
     'tid' => array(
@@ -205,6 +286,14 @@ function sitenow_people_views_default_views() {
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'views-grid';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['use_more'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'View more';
+  $handler->display->display_options['link_url'] = 'people';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '9';
@@ -308,6 +397,87 @@ function sitenow_people_views_default_views() {
     'person_type' => 'person_type',
   );
   $handler->display->display_options['arguments']['tid']['reduce_duplicates'] = TRUE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'people' => 'people',
+  );
+  /* Filter criterion: Content: Department (field_person_department) */
+  $handler->display->display_options['filters']['field_person_department_tid']['id'] = 'field_person_department_tid';
+  $handler->display->display_options['filters']['field_person_department_tid']['table'] = 'field_data_field_person_department';
+  $handler->display->display_options['filters']['field_person_department_tid']['field'] = 'field_person_department_tid';
+  $handler->display->display_options['filters']['field_person_department_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_person_department_tid']['expose']['operator_id'] = 'field_person_department_tid_op';
+  $handler->display->display_options['filters']['field_person_department_tid']['expose']['label'] = 'Filter by department';
+  $handler->display->display_options['filters']['field_person_department_tid']['expose']['description'] = 'Optionally display people from a specific department';
+  $handler->display->display_options['filters']['field_person_department_tid']['expose']['operator'] = 'field_person_department_tid_op';
+  $handler->display->display_options['filters']['field_person_department_tid']['expose']['identifier'] = 'field_person_department_tid';
+  $handler->display->display_options['filters']['field_person_department_tid']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_person_department_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    4 => 0,
+    5 => 0,
+    3 => 0,
+  );
+  $handler->display->display_options['filters']['field_person_department_tid']['group_info']['label'] = 'Department (field_person_department)';
+  $handler->display->display_options['filters']['field_person_department_tid']['group_info']['identifier'] = 'field_person_department_tid';
+  $handler->display->display_options['filters']['field_person_department_tid']['group_info']['remember'] = FALSE;
+  $handler->display->display_options['filters']['field_person_department_tid']['group_info']['group_items'] = array(
+    1 => array(),
+    2 => array(),
+    3 => array(),
+  );
+  $handler->display->display_options['filters']['field_person_department_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_person_department_tid']['vocabulary'] = 'sitenow_people_department';
+  /* Filter criterion: Content: Person Type (field_person_type) */
+  $handler->display->display_options['filters']['field_person_type_tid']['id'] = 'field_person_type_tid';
+  $handler->display->display_options['filters']['field_person_type_tid']['table'] = 'field_data_field_person_type';
+  $handler->display->display_options['filters']['field_person_type_tid']['field'] = 'field_person_type_tid';
+  $handler->display->display_options['filters']['field_person_type_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_person_type_tid']['expose']['operator_id'] = 'field_person_type_tid_op';
+  $handler->display->display_options['filters']['field_person_type_tid']['expose']['label'] = 'Filter by person type';
+  $handler->display->display_options['filters']['field_person_type_tid']['expose']['description'] = 'Optionally display people by person type';
+  $handler->display->display_options['filters']['field_person_type_tid']['expose']['operator'] = 'field_person_type_tid_op';
+  $handler->display->display_options['filters']['field_person_type_tid']['expose']['identifier'] = 'field_person_type_tid';
+  $handler->display->display_options['filters']['field_person_type_tid']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_person_type_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    4 => 0,
+    5 => 0,
+    3 => 0,
+  );
+  $handler->display->display_options['filters']['field_person_type_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_person_type_tid']['vocabulary'] = 'person_type';
+  /* Filter criterion: Content: Promoted to front page */
+  $handler->display->display_options['filters']['promote']['id'] = 'promote';
+  $handler->display->display_options['filters']['promote']['table'] = 'node';
+  $handler->display->display_options['filters']['promote']['field'] = 'promote';
+  $handler->display->display_options['filters']['promote']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['promote']['expose']['operator_id'] = '';
+  $handler->display->display_options['filters']['promote']['expose']['label'] = 'Filter by promoted to front';
+  $handler->display->display_options['filters']['promote']['expose']['description'] = 'Optionally display people marked promoted to front';
+  $handler->display->display_options['filters']['promote']['expose']['operator'] = 'promote_op';
+  $handler->display->display_options['filters']['promote']['expose']['identifier'] = 'promote';
+  $handler->display->display_options['filters']['promote']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    4 => 0,
+    5 => 0,
+    3 => 0,
+  );
   $handler->display->display_options['pane_title'] = 'People grid list';
   $handler->display->display_options['pane_description'] = 'Grid layout of people';
   $handler->display->display_options['pane_category']['name'] = 'People';
@@ -316,10 +486,10 @@ function sitenow_people_views_default_views() {
   $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
   $handler->display->display_options['allow']['offset'] = 0;
   $handler->display->display_options['allow']['link_to_view'] = 0;
-  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 'more_link';
   $handler->display->display_options['allow']['path_override'] = 0;
   $handler->display->display_options['allow']['title_override'] = 'title_override';
-  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['exposed_form'] = 'exposed_form';
   $handler->display->display_options['allow']['fields_override'] = 'fields_override';
   $handler->display->display_options['argument_input'] = array(
     'tid' => array(
@@ -416,6 +586,79 @@ function sitenow_people_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'people' => 'people',
+  );
+  /* Filter criterion: Content: Person Type (field_person_type) */
+  $handler->display->display_options['filters']['field_person_type_tid']['id'] = 'field_person_type_tid';
+  $handler->display->display_options['filters']['field_person_type_tid']['table'] = 'field_data_field_person_type';
+  $handler->display->display_options['filters']['field_person_type_tid']['field'] = 'field_person_type_tid';
+  $handler->display->display_options['filters']['field_person_type_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_person_type_tid']['expose']['operator_id'] = 'field_person_type_tid_op';
+  $handler->display->display_options['filters']['field_person_type_tid']['expose']['label'] = 'Filter by person type';
+  $handler->display->display_options['filters']['field_person_type_tid']['expose']['description'] = 'Optionally display people by person type';
+  $handler->display->display_options['filters']['field_person_type_tid']['expose']['operator'] = 'field_person_type_tid_op';
+  $handler->display->display_options['filters']['field_person_type_tid']['expose']['identifier'] = 'field_person_type_tid';
+  $handler->display->display_options['filters']['field_person_type_tid']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_person_type_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    4 => 0,
+    5 => 0,
+    3 => 0,
+  );
+  $handler->display->display_options['filters']['field_person_type_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_person_type_tid']['vocabulary'] = 'person_type';
+  /* Filter criterion: Content: Department (field_person_department) */
+  $handler->display->display_options['filters']['field_person_department_tid']['id'] = 'field_person_department_tid';
+  $handler->display->display_options['filters']['field_person_department_tid']['table'] = 'field_data_field_person_department';
+  $handler->display->display_options['filters']['field_person_department_tid']['field'] = 'field_person_department_tid';
+  $handler->display->display_options['filters']['field_person_department_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_person_department_tid']['expose']['operator_id'] = 'field_person_department_tid_op';
+  $handler->display->display_options['filters']['field_person_department_tid']['expose']['label'] = 'Filter by department';
+  $handler->display->display_options['filters']['field_person_department_tid']['expose']['description'] = 'Optionally display people from a specific department';
+  $handler->display->display_options['filters']['field_person_department_tid']['expose']['operator'] = 'field_person_department_tid_op';
+  $handler->display->display_options['filters']['field_person_department_tid']['expose']['identifier'] = 'field_person_department_tid';
+  $handler->display->display_options['filters']['field_person_department_tid']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_person_department_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    4 => 0,
+    5 => 0,
+    3 => 0,
+  );
+  $handler->display->display_options['filters']['field_person_department_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_person_department_tid']['vocabulary'] = 'sitenow_people_department';
+  /* Filter criterion: Content: Promoted to front page */
+  $handler->display->display_options['filters']['promote']['id'] = 'promote';
+  $handler->display->display_options['filters']['promote']['table'] = 'node';
+  $handler->display->display_options['filters']['promote']['field'] = 'promote';
+  $handler->display->display_options['filters']['promote']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['promote']['expose']['operator_id'] = '';
+  $handler->display->display_options['filters']['promote']['expose']['label'] = 'Filter by promoted to front';
+  $handler->display->display_options['filters']['promote']['expose']['description'] = 'Optionally display people marked promoted to front';
+  $handler->display->display_options['filters']['promote']['expose']['operator'] = 'promote_op';
+  $handler->display->display_options['filters']['promote']['expose']['identifier'] = 'promote';
+  $handler->display->display_options['filters']['promote']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    4 => 0,
+    5 => 0,
+    3 => 0,
+  );
   $handler->display->display_options['pane_title'] = 'People sidebar list';
   $handler->display->display_options['pane_description'] = 'List of People';
   $handler->display->display_options['pane_category']['name'] = 'People';
@@ -427,7 +670,7 @@ function sitenow_people_views_default_views() {
   $handler->display->display_options['allow']['more_link'] = 'more_link';
   $handler->display->display_options['allow']['path_override'] = 0;
   $handler->display->display_options['allow']['title_override'] = 'title_override';
-  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['exposed_form'] = 'exposed_form';
   $handler->display->display_options['allow']['fields_override'] = 'fields_override';
 
   /* Display: Order of People Content */
@@ -550,6 +793,12 @@ function sitenow_people_views_default_views() {
   $handler->display->display_options['fields']['field_person_type']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_person_type']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_person_type']['delta_offset'] = '0';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Taxonomy term: Weight */
+  $handler->display->display_options['sorts']['weight']['id'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['sorts']['weight']['field'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['relationship'] = 'term_node_tid';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Taxonomy term: Term ID */
   $handler->display->display_options['arguments']['tid']['id'] = 'tid';
@@ -617,6 +866,12 @@ function sitenow_people_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Taxonomy term: Weight */
+  $handler->display->display_options['sorts']['weight']['id'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['sorts']['weight']['field'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['relationship'] = 'term_node_tid';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Taxonomy term: Term ID */
   $handler->display->display_options['arguments']['tid']['id'] = 'tid';
