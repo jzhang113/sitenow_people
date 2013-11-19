@@ -104,6 +104,16 @@ function sitenow_people_panels_default_page_manager_pages() {
       'items_per_page' => '9',
       'override_title' => 0,
       'override_title_text' => '',
+      'fields_override' => array(
+        'field_person_image' => 1,
+        'title' => 1,
+        'field_person_position' => 1,
+        'field_person_department' => 1,
+        'field_person_type' => 0,
+        'field_person_email' => 0,
+        'field_person_office' => 0,
+        'field_person_phone' => 0,
+      ),
     );
     $pane->cache = array();
     $pane->style = array(
