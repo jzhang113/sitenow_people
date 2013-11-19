@@ -33,6 +33,7 @@ apps[description] = Enables the option to add a content area to the site for lis
 apps[server] = local
 apps[local] = 1
 apps[logo] = apps/logo.png
+apps[screenshots][] = apps/screenshot.png
 features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
