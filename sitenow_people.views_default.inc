@@ -712,9 +712,9 @@ function sitenow_people_views_default_views() {
   $handler->display->display_options['fields']['field_person_image']['field'] = 'field_person_image';
   $handler->display->display_options['fields']['field_person_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_person_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_person_image']['type'] = 'file_rendered';
   $handler->display->display_options['fields']['field_person_image']['settings'] = array(
-    'file_view_mode' => 'people_table',
+    'image_style' => 'people_table',
+    'image_link' => '',
   );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
