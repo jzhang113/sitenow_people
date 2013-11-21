@@ -112,7 +112,7 @@ function sitenow_people_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 8,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -156,7 +156,7 @@ function sitenow_people_field_default_field_instances() {
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_default',
-        'weight' => 9,
+        'weight' => 8,
       ),
       'ical' => array(
         'label' => 'above',
@@ -198,7 +198,7 @@ function sitenow_people_field_default_field_instances() {
     'bundle' => 'people',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'This a reference to the department taxonomy. You can add terms to that vocabulary and they will appear as checkboxes. This allows you to group people by departments. Only webmasters have permission to edit taxonomies. ',
+    'description' => 'This a reference to the <a href="/admin/structure/taxonomy/sitenow_people_department">department taxonomy</a>. You can add terms to that vocabulary and they will appear as checkboxes. This allows you to group people by departments. Only webmasters have permission to edit taxonomies. ',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -347,17 +347,10 @@ function sitenow_people_field_default_field_instances() {
         'manualcrop_inline_crop' => FALSE,
         'manualcrop_instant_crop' => FALSE,
         'manualcrop_instant_preview' => 0,
-        'manualcrop_require_cropping' => array(
-          'crop_selection_rectangle_3-2' => 0,
-          'featured_slider' => 0,
-          'person_large' => 0,
-          'person_small__100x100' => 0,
-        ),
+        'manualcrop_maximize_default_crop_area' => FALSE,
+        'manualcrop_require_cropping' => array(),
         'manualcrop_styles_list' => array(
           'crop_selection_rectangle_3-2' => 'crop_selection_rectangle_3-2',
-          'featured_slider' => 0,
-          'person_large' => 0,
-          'person_small__100x100' => 0,
         ),
         'manualcrop_styles_mode' => 'include',
         'manualcrop_thumblist' => 0,
@@ -510,7 +503,7 @@ function sitenow_people_field_default_field_instances() {
     'bundle' => 'people',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'This a reference to the person type taxonomy. You can add terms to that vocabulary and they will appear as checkboxes. This allows you to group people by classifications such as faculty, staff or student. Only webmasters have permission to edit taxonomies. ',
+    'description' => 'This a reference to the <a href="/admin/structure/taxonomy/person_type">person type taxonomy</a>. You can add terms to that vocabulary and they will appear as checkboxes. This allows you to group people by classifications such as faculty, staff or student. Only webmasters have permission to edit taxonomies. ',
     'display' => array(
       'default' => array(
         'label' => 'above',
