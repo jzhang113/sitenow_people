@@ -199,7 +199,7 @@ function sitenow_people_field_default_field_bases() {
     'locked' => 0,
     'module' => 'image',
     'settings' => array(
-      'default_image' => 9,
+      'default_image' => 0,
       'uri_scheme' => 'public',
     ),
     'translatable' => 0,
