@@ -280,7 +280,7 @@ function sitenow_people_field_default_field_instances() {
     'bundle' => 'people',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Uploaded images will be displayed using a 3:2 aspect ratio. Suggested minimum dimensions for an uploaded image are 500x333 pixels.',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -623,6 +623,7 @@ function sitenow_people_field_default_field_instances() {
   t('The campus address or office number of this person.');
   t('This a reference to the <a href="/admin/structure/taxonomy/person_type">person type taxonomy</a>. You can add terms to that vocabulary and they will appear as checkboxes. This allows you to group people by classifications such as faculty, staff or student. Only webmasters have permission to edit taxonomies. ');
   t('This a reference to the <a href="/admin/structure/taxonomy/sitenow_people_department">department taxonomy</a>. You can add terms to that vocabulary and they will appear as checkboxes. This allows you to group people by departments. Only webmasters have permission to edit taxonomies. ');
+  t('Uploaded images will be displayed using a 3:2 aspect ratio. Suggested minimum dimensions for an uploaded image are 500x333 pixels.');
   t('Valid URL to a website. Will be automatically formatted as a link.');
   t('Valid email address for this person. Will be automatically formatted as a mail-to link.');
   t('Website');
