@@ -610,6 +610,8 @@ function sitenow_people_views_default_views() {
   $handler->display->display_options['fields']['field_person_type']['table'] = 'field_data_field_person_type';
   $handler->display->display_options['fields']['field_person_type']['field'] = 'field_person_type';
   $handler->display->display_options['fields']['field_person_type']['ui_name'] = 'Person Type';
+  $handler->display->display_options['fields']['field_person_type']['label'] = '';
+  $handler->display->display_options['fields']['field_person_type']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_person_type']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_person_type']['delta_offset'] = '0';
   /* Field: Email */
