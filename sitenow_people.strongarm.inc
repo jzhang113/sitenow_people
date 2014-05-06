@@ -14,7 +14,7 @@ function sitenow_people_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_people';
-  $strongarm->value = 'edit-xmlsitemap';
+  $strongarm->value = 'edit-submission';
   $export['additional_settings__active_tab_people'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -102,6 +102,7 @@ function sitenow_people_strongarm() {
   $strongarm->name = 'node_options_people';
   $strongarm->value = array(
     0 => 'status',
+    1 => 'revision',
   );
   $export['node_options_people'] = $strongarm;
 
@@ -111,6 +112,20 @@ function sitenow_people_strongarm() {
   $strongarm->name = 'node_preview_people';
   $strongarm->value = '1';
   $export['node_preview_people'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_revision_delete_number_people';
+  $strongarm->value = '5';
+  $export['node_revision_delete_number_people'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_revision_delete_track_people';
+  $strongarm->value = 1;
+  $export['node_revision_delete_track_people'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
