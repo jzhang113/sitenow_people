@@ -74,6 +74,8 @@ function sitenow_people_disable() {
 * any existing issues caused by using node tokens rather than entity tokens.
 */
 function sitenow_people_update_7100(&$sandbox) {
+  // Enable entity_token.
+  module_enable(array('entity_token'));
   // Revert feature first so nodes save using correct token.
   $feature = features_get_features('sitenow_people');
   $components = array_keys($feature->info['features']);
