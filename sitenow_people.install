@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * 
+ *
  * Install and uninstall tasks for SiteNow People
  */
 
@@ -35,7 +35,7 @@ function sitenow_people_disable() {
   // all instances of the field, their data, and the field itself.
   foreach (field_info_field_map() as $field_name => $field_info) {
     if (array_key_exists('node', $field_info['bundles'])) {
-      if (in_array('people', $field_info['bundles']['node'])) {        
+      if (in_array('people', $field_info['bundles']['node'])) {
         if (count($field_info['bundles']['node'] == 1)) {
           field_delete_field($field_name);
         }
@@ -67,4 +67,34 @@ function sitenow_people_disable() {
   $module_list = array('sitenow_people_panelizer', 'sitenow_people_panels',);
   $disable_dependents = FALSE;
   module_disable($module_list, $disable_dependents);
+}
+
+/**
+* Load and save all people nodes that have special characters in the titleto fix
+* any existing issues caused by using node tokens rather than entity tokens.
+*/
+function sitenow_people_update_7100(&$sandbox) {
+  // Revert feature first so nodes save using correct token.
+  $feature = features_get_features('sitenow_people');
+  $components = array_keys($feature->info['features']);
+  features_revert(array('sitenow_people' => $components));
+
+  // EFQ to load and save all person nodes.
+  $query = new EntityFieldQuery();
+
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'people')
+    ->propertyCondition('title', '&#', 'CONTAINS')
+    ->addMetaData('account', user_load(1)); // Run the query as user 1.
+
+  $result = $query->execute();
+
+  if (isset($result['node'])) {
+    $people_nids = array_keys($result['node']);
+    $people = entity_load('node', $people_nids);
+
+    foreach ($people as $person) {
+      node_save($person);
+    }
+  }
 }

@@ -8,6 +8,7 @@ dependencies[] = auto_entitylabel
 dependencies[] = ctools
 dependencies[] = draggableviews
 dependencies[] = email
+dependencies[] = entity_token
 dependencies[] = features
 dependencies[] = file
 dependencies[] = image
