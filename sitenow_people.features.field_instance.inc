@@ -198,7 +198,7 @@ function sitenow_people_field_default_field_instances() {
     'bundle' => 'people',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'This a reference to the <a href="/admin/structure/taxonomy/sitenow_people_department">department taxonomy</a>. You can add terms to that vocabulary and they will appear as checkboxes. This allows you to group people by departments. Only webmasters have permission to edit taxonomies. ',
+    'description' => 'This a reference to the <a href="' . $GLOBALS['base_url'] . '/admin/structure/taxonomy/sitenow_people_department">department taxonomy</a>. You can add terms to that vocabulary and they will appear as checkboxes. This allows you to group people by departments. Only webmasters have permission to edit taxonomies. ',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -506,7 +506,7 @@ function sitenow_people_field_default_field_instances() {
     'bundle' => 'people',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'This a reference to the <a href="/admin/structure/taxonomy/person_type">person type taxonomy</a>. You can add terms to that vocabulary and they will appear as checkboxes. This allows you to group people by classifications such as faculty, staff or student. Only webmasters have permission to edit taxonomies. ',
+    'description' => 'This a reference to the <a href="' . $GLOBALS['base_url'] . '/admin/structure/taxonomy/person_type">person type taxonomy</a>. You can add terms to that vocabulary and they will appear as checkboxes. This allows you to group people by classifications such as faculty, staff or student. Only webmasters have permission to edit taxonomies. ',
     'display' => array(
       'default' => array(
         'label' => 'above',
