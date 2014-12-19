@@ -104,6 +104,11 @@ function sitenow_people_panels_default_page_manager_pages() {
       'items_per_page' => '9',
       'override_title' => 0,
       'override_title_text' => '',
+      'exposed' => array(
+        'field_person_department_tid' => array(),
+        'field_person_type_tid' => array(),
+        'promote' => 'All',
+      ),
       'fields_override' => array(
         'field_person_image' => 1,
         'title' => 1,
