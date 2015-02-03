@@ -11,9 +11,6 @@
 function sitenow_people_content_migrate_api() {
   $api = array(
     'api' => 2,
-    'migrations' => array(
-      'SiteNowPeople' => array('class_name' => 'SiteNowPeopleMigration'),
-    ),
   );
   return $api;
 }
@@ -23,8 +20,8 @@ function sitenow_people_content_migrate_api() {
 // could then be extended by each app.
 class SiteNowPeopleMigration extends Migration {
 
-  public function __construct() {
-    parent::__construct(MigrateGroup::getInstance('SiteNow'));
+  public function __construct($arguments) {
+    parent::__construct($arguments);
 
     // Avoid known line ending issue: drupal.org/node/1705850
     ini_set('auto_detect_line_endings', TRUE);
@@ -65,22 +62,20 @@ class SiteNowPeopleMigration extends Migration {
 
     $this->addFieldMapping('field_person_position', 'position');
 
-    $this->addFieldMapping('field_person_type', 'type')
-         ->arguments(array(
-           'create_term' => TRUE,
-           'ignore_case' => TRUE,
-           )
-         );
+    $this->addFieldMapping('field_person_type', 'type');
+    $this->addFieldMapping('field_person_type:create_term')
+         ->defaultValue(TRUE);
+    $this->addFieldMapping('field_person_type:ignore_case')
+         ->defaultValue(TRUE);
 
-    $this->addFieldMapping('field_person_department', 'dept')
-         ->arguments(array(
-           'create_term' => TRUE,
-           'ignore_case' => TRUE,
-           )
-         );
+    $this->addFieldMapping('field_person_department', 'dept');
+    $this->addFieldMapping('field_person_department:create_term')
+         ->defaultValue(TRUE);
+    $this->addFieldMapping('field_person_department:ignore_case')
+         ->defaultValue(TRUE);
 
-    $this->addFieldMapping('field_person_bio', 'bio')
-     ->arguments(array('format' => 'filtered_html'));
+    $this->addFieldMapping('field_person_bio', 'bio');
+    $this->addFieldMapping('field_person_bio:format')->defaultValue('filtered_html');;
     $this->addFieldMapping('field_person_phone', 'phone');
     // Waiting for http://drupal.org/node/1010850
     //$this->addFieldMapping('field_person_website', 'website');
