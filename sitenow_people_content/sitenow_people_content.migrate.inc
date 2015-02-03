@@ -75,7 +75,7 @@ class SiteNowPeopleMigration extends Migration {
          ->defaultValue(TRUE);
 
     $this->addFieldMapping('field_person_bio', 'bio');
-    $this->addFieldMapping('field_person_bio:format')->defaultValue('filtered_html');;
+    $this->addFieldMapping('field_person_bio:format')->defaultValue('filtered_html');
     $this->addFieldMapping('field_person_phone', 'phone');
     // Waiting for http://drupal.org/node/1010850
     //$this->addFieldMapping('field_person_website', 'website');
