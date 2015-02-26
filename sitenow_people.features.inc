@@ -31,8 +31,8 @@ function sitenow_people_image_default_styles() {
     'name' => 'people_grid',
     'label' => 'People Grid',
     'effects' => array(
-      11 => array(
-        'label' => 'Reuse a Manual Crop selection',
+      7 => array(
+        'label' => 'Manual Crop: Reuse cropped style',
         'help' => 'Reuse a crop selection from another Manual Crop enabled image style.',
         'effect callback' => 'manualcrop_reuse_effect',
         'form callback' => 'manualcrop_reuse_form',
@@ -40,12 +40,11 @@ function sitenow_people_image_default_styles() {
         'module' => 'manualcrop',
         'name' => 'manualcrop_reuse',
         'data' => array(
-          'reusestyle' => 'crop_selection_rectangle_3-2',
-          'style_name' => 'people_grid',
+          'reuse_crop_style' => 'crop_selection_rectangle_3-2',
         ),
         'weight' => 0,
       ),
-      12 => array(
+      8 => array(
         'label' => 'Scale',
         'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
         'effect callback' => 'image_scale_effect',
@@ -69,8 +68,8 @@ function sitenow_people_image_default_styles() {
     'name' => 'people_table',
     'label' => 'People Table',
     'effects' => array(
-      13 => array(
-        'label' => 'Reuse a Manual Crop selection',
+      9 => array(
+        'label' => 'Manual Crop: Reuse cropped style',
         'help' => 'Reuse a crop selection from another Manual Crop enabled image style.',
         'effect callback' => 'manualcrop_reuse_effect',
         'form callback' => 'manualcrop_reuse_form',
@@ -78,12 +77,11 @@ function sitenow_people_image_default_styles() {
         'module' => 'manualcrop',
         'name' => 'manualcrop_reuse',
         'data' => array(
-          'reusestyle' => 'crop_selection_rectangle_3-2',
-          'style_name' => 'people_table',
+          'reuse_crop_style' => 'crop_selection_rectangle_3-2',
         ),
         'weight' => 0,
       ),
-      14 => array(
+      10 => array(
         'label' => 'Scale',
         'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
         'effect callback' => 'image_scale_effect',
@@ -119,5 +117,6 @@ function sitenow_people_node_info() {
       'help' => t('The title will be constructed from the first name and last name fields, e.g. Jane Doe. A middle name or initial can be used after the first name. The photo field will be used as a thumbnail on the <a href="/people">people page</a>. See the <a href="/admin/apps/sitenow/sitenow_people/configure">demo content</a> for an example.'),
     ),
   );
+  drupal_alter('node_info', $items);
   return $items;
 }
