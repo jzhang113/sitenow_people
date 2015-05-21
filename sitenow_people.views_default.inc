@@ -275,6 +275,7 @@ function sitenow_people_views_default_views() {
     5 => 0,
     3 => 0,
   );
+  $handler->display->display_options['filters']['field_person_department_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_person_department_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_person_department_tid']['vocabulary'] = 'sitenow_people_department';
   /* Filter criterion: Content: Person Type (field_person_type) */
@@ -295,6 +296,7 @@ function sitenow_people_views_default_views() {
     5 => 0,
     3 => 0,
   );
+  $handler->display->display_options['filters']['field_person_type_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_person_type_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_person_type_tid']['vocabulary'] = 'person_type';
   /* Filter criterion: Content: Promoted to front page */
@@ -498,6 +500,7 @@ function sitenow_people_views_default_views() {
     2 => array(),
     3 => array(),
   );
+  $handler->display->display_options['filters']['field_person_department_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_person_department_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_person_department_tid']['vocabulary'] = 'sitenow_people_department';
   /* Filter criterion: Content: Person Type (field_person_type) */
@@ -518,6 +521,7 @@ function sitenow_people_views_default_views() {
     5 => 0,
     3 => 0,
   );
+  $handler->display->display_options['filters']['field_person_type_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_person_type_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_person_type_tid']['vocabulary'] = 'person_type';
   /* Filter criterion: Content: Promoted to front page */
@@ -700,6 +704,7 @@ function sitenow_people_views_default_views() {
     5 => 0,
     3 => 0,
   );
+  $handler->display->display_options['filters']['field_person_type_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_person_type_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_person_type_tid']['vocabulary'] = 'person_type';
   /* Filter criterion: Content: Department (field_person_department) */
@@ -720,6 +725,7 @@ function sitenow_people_views_default_views() {
     5 => 0,
     3 => 0,
   );
+  $handler->display->display_options['filters']['field_person_department_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_person_department_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_person_department_tid']['vocabulary'] = 'sitenow_people_department';
   /* Filter criterion: Content: Promoted to front page */
