@@ -119,6 +119,7 @@ function sitenow_people_panels_default_page_manager_pages() {
         'field_person_email' => 0,
         'field_person_office' => 0,
         'field_person_phone' => 0,
+        'field_person_bio' => 0,
       ),
     );
     $pane->cache = array();

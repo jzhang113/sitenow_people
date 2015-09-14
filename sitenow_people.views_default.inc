@@ -209,6 +209,15 @@ function sitenow_people_views_default_views() {
   $handler->display->display_options['fields']['field_person_phone']['field'] = 'field_person_phone';
   $handler->display->display_options['fields']['field_person_phone']['ui_name'] = 'Phone';
   $handler->display->display_options['fields']['field_person_phone']['element_label_colon'] = FALSE;
+  /* Field: Bio */
+  $handler->display->display_options['fields']['field_person_bio']['id'] = 'field_person_bio';
+  $handler->display->display_options['fields']['field_person_bio']['table'] = 'field_data_field_person_bio';
+  $handler->display->display_options['fields']['field_person_bio']['field'] = 'field_person_bio';
+  $handler->display->display_options['fields']['field_person_bio']['ui_name'] = 'Bio';
+  $handler->display->display_options['fields']['field_person_bio']['type'] = 'text_summary_or_trimmed';
+  $handler->display->display_options['fields']['field_person_bio']['settings'] = array(
+    'trim_length' => '600',
+  );
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Draggableviews: Weight */
   $handler->display->display_options['sorts']['weight']['id'] = 'weight';
@@ -427,6 +436,17 @@ function sitenow_people_views_default_views() {
   $handler->display->display_options['fields']['field_person_phone']['ui_name'] = 'Phone';
   $handler->display->display_options['fields']['field_person_phone']['label'] = '';
   $handler->display->display_options['fields']['field_person_phone']['element_label_colon'] = FALSE;
+  /* Field: Bio */
+  $handler->display->display_options['fields']['field_person_bio']['id'] = 'field_person_bio';
+  $handler->display->display_options['fields']['field_person_bio']['table'] = 'field_data_field_person_bio';
+  $handler->display->display_options['fields']['field_person_bio']['field'] = 'field_person_bio';
+  $handler->display->display_options['fields']['field_person_bio']['ui_name'] = 'Bio';
+  $handler->display->display_options['fields']['field_person_bio']['label'] = '';
+  $handler->display->display_options['fields']['field_person_bio']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_person_bio']['type'] = 'text_summary_or_trimmed';
+  $handler->display->display_options['fields']['field_person_bio']['settings'] = array(
+    'trim_length' => '600',
+  );
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Draggableviews: Weight */
   $handler->display->display_options['sorts']['weight']['id'] = 'weight';
@@ -639,6 +659,17 @@ function sitenow_people_views_default_views() {
   $handler->display->display_options['fields']['field_person_phone']['ui_name'] = 'Phone';
   $handler->display->display_options['fields']['field_person_phone']['label'] = '';
   $handler->display->display_options['fields']['field_person_phone']['element_label_colon'] = FALSE;
+  /* Field: Bio */
+  $handler->display->display_options['fields']['field_person_bio']['id'] = 'field_person_bio';
+  $handler->display->display_options['fields']['field_person_bio']['table'] = 'field_data_field_person_bio';
+  $handler->display->display_options['fields']['field_person_bio']['field'] = 'field_person_bio';
+  $handler->display->display_options['fields']['field_person_bio']['ui_name'] = 'Bio';
+  $handler->display->display_options['fields']['field_person_bio']['label'] = '';
+  $handler->display->display_options['fields']['field_person_bio']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_person_bio']['type'] = 'text_summary_or_trimmed';
+  $handler->display->display_options['fields']['field_person_bio']['settings'] = array(
+    'trim_length' => '600',
+  );
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Draggableviews: Weight */
   $handler->display->display_options['sorts']['weight']['id'] = 'weight';
